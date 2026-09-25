@@ -1,0 +1,140 @@
+================================================================================
+Amazon ML Challenge 2026 — Local Dataset Profile
+================================================================================
+Data directory: C:\Users\prajw\OneDrive\Desktop\6ab10eb3b23ba_student_resource\student_resource\dataset
+Python version: 3.12.10 (win32)
+Parsing mode: Sequential stream with explicit TAB delimiter (RFC 4180/TSV compliant)
+
+========================================
+TRAIN DATASET PROFILE
+========================================
+
+[dataset\train\train_source1.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 2,206,821
+  Malformed rows: 0
+  Missing values by column: none
+  Country distribution: India=883,188, US=1,323,633
+  Unexpected countries: none
+  IDs conforming to 'S1-': 2,206,821 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 667,592 beyond first occurrence
+  Duplicate addresses: 76,215 beyond first occurrence
+  Name length statistics: n=2,206,821, min=3, mean=24.03, max=105
+  Address length statistics: n=2,206,821, min=11, mean=52.07, max=256
+  Comma handling inspection: 168,736 names and 2,206,821 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 4
+  Profiled in: 11.78s
+
+[dataset\train\train_source2.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 5,034,616
+  Malformed rows: 0
+  Missing values by column: entity_id=0, business_name=0, business_address=168,967, country=0
+  Country distribution: India=2,017,799, US=3,016,817
+  Unexpected countries: none
+  IDs conforming to 'S2-': 5,034,616 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 632,607 beyond first occurrence
+  Duplicate addresses: 697,354 beyond first occurrence
+  Name length statistics: n=5,034,616, min=2, mean=25.10, max=104
+  Address length statistics: n=5,034,616, min=0, mean=46.23, max=249
+  Comma handling inspection: 345,864 names and 4,865,649 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 6
+  Profiled in: 30.17s
+
+[dataset\train\train_source3.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 5,285,603
+  Malformed rows: 0
+  Missing values by column: entity_id=0, business_name=0, business_address=175,916, country=0
+  Country distribution: India=2,115,547, US=3,170,056
+  Unexpected countries: none
+  IDs conforming to 'S3-': 5,285,603 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 633,994 beyond first occurrence
+  Duplicate addresses: 652,838 beyond first occurrence
+  Name length statistics: n=5,285,603, min=2, mean=25.20, max=123
+  Address length statistics: n=5,285,603, min=0, mean=46.71, max=240
+  Comma handling inspection: 359,325 names and 5,109,686 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 0
+  Profiled in: 30.80s
+
+[dataset\train\train_ground_truth.tsv]
+  Columns (2): ['source1_entity_id', 'matched_entity_ids']
+  Row count: 2,206,821
+  Malformed rows: 0
+  Total Source 1 entities: 2,206,821
+  Duplicate Source 1 rows: 0
+  Singleton / no-match count: 123,247 (5.58%)
+  One-match count: 119,157 (5.40%)
+  Two-match count: 375,212 (17.00%)
+  Three-or-more-match count: 1,589,205 (72.01%)
+  Total matched IDs: 7,638,365
+  S2-only matches: 143,029 (6.48%)
+  S3-only matches: 164,498 (7.45%)
+  S2+S3 matches: 1,776,047 (80.48%)
+  Matched ID prefix breakdown: {'S2-': 3693619, 'S3-': 3944746}
+  Self-matches (S1- prefix): 0
+  Unexpected-prefix matched IDs: 0
+  Duplicate IDs within a single match list: 0
+  Profiled in: 12.70s
+
+========================================
+TEST DATASET PROFILE
+========================================
+
+[dataset\test\test_source1.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 1,732,544
+  Malformed rows: 0
+  Missing values by column: none
+  Country distribution: France=259,452, India=809,986, US=663,106
+  Unexpected countries: none
+  IDs conforming to 'S1-': 1,732,544 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 493,677 beyond first occurrence
+  Duplicate addresses: 55,061 beyond first occurrence
+  Name length statistics: n=1,732,544, min=3, mean=23.84, max=92
+  Address length statistics: n=1,732,544, min=11, mean=57.21, max=268
+  Comma handling inspection: 84,529 names and 1,732,544 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 134
+  Profiled in: 9.90s
+
+[dataset\test\test_source2.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 4,887,273
+  Malformed rows: 0
+  Missing values by column: entity_id=0, business_name=0, business_address=129,408, country=0
+  Country distribution: France=703,378, India=2,312,565, US=1,871,330
+  Unexpected countries: none
+  IDs conforming to 'S2-': 4,887,273 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 576,232 beyond first occurrence
+  Duplicate addresses: 662,489 beyond first occurrence
+  Name length statistics: n=4,887,273, min=2, mean=25.70, max=102
+  Address length statistics: n=4,887,273, min=0, mean=50.41, max=269
+  Comma handling inspection: 218,508 names and 4,757,683 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 349
+  Profiled in: 29.17s
+
+[dataset\test\test_source3.tsv]
+  Columns (4): ['entity_id', 'business_name', 'business_address', 'country']
+  Row count: 5,082,316
+  Malformed rows: 0
+  Missing values by column: entity_id=0, business_name=0, business_address=136,098, country=0
+  Country distribution: France=731,615, India=2,405,000, US=1,945,701
+  Unexpected countries: none
+  IDs conforming to 'S3-': 5,082,316 valid, 0 invalid
+  Duplicate entity IDs: 0 beyond first occurrence
+  Duplicate business names: 560,387 beyond first occurrence
+  Duplicate addresses: 625,880 beyond first occurrence
+  Name length statistics: n=5,082,316, min=2, mean=25.66, max=103
+  Address length statistics: n=5,082,316, min=0, mean=48.74, max=267
+  Comma handling inspection: 225,030 names and 4,946,064 addresses contain commas (TSV parser preserves all fields correctly)
+  Rows with quotes: 330
+  Profiled in: 30.12s
+
+================================================================================
+Total profiling completed in 154.64s
+================================================================================

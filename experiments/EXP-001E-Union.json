@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-001E-Union",
+  "hypothesis": "Evaluate recall recovery and candidate volume for Strategy E-Union: EXP-001D + E-A + E-B + E-C.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full S2+S3 search pool (10,320,219 records).",
+  "blocking_method": "Strategy E-Union: EXP-001D + E-A + E-B + E-C",
+  "features": [
+    "strategy_e-union:_exp-001d_+_e-a_+_e-b_+_e-c"
+  ],
+  "model": "Inverted Index Hash Table",
+  "hyperparameters": {
+    "country_restricted": true
+  },
+  "validation_method": "Candidate Pair Recall & Reduction Ratio",
+  "macro_F0_5": 0.9575329398792667,
+  "precision": 0.00016044580661630608,
+  "recall": 0.9569474442044636,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 8230.873801469803,
+  "notes": "Avg candidates/S1: 20700.69, Median: 12254, P95: 63248, Max: 175,621, Total pairs: 41,422,086",
+  "conclusion": "Pair recall: 95.69%, S2 recall: 95.35%, S3 recall: 96.01%, Reduction Ratio: 99.799416%.",
+  "next_experiment": "EXP-002",
+  "timestamp": "2026-09-25T10:24:27.249987+00:00",
+  "extra_metrics": {
+    "total_candidate_pairs": 41422086,
+    "reduction_ratio": 0.9979941614946666,
+    "avg_candidates_per_s1": 20700.692653673163,
+    "median_candidates_per_s1": 12254,
+    "p95_candidates_per_s1": 63248,
+    "max_candidates_per_s1": 175621,
+    "s2_recall": 0.9535371702637889,
+    "s3_recall": 0.9600997506234414,
+    "zero_candidate_entities": 0,
+    "perfect_recall_entities": 1775,
+    "missed_entities": 226
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "competition": {
+    "name": "Amazon ML Challenge 2026 - Business Entity Resolution",
+    "primary_metric": "macro_F0.5",
+    "beta": 0.5,
+    "model_license_requirement": ["MIT", "Apache-2.0"],
+    "max_model_parameters": "8B",
+    "external_data_lookup_allowed": false
+  },
+  "paths": {
+    "train_ground_truth": "dataset/train/train_ground_truth.tsv",
+    "train_source1": "dataset/train/train_source1.tsv",
+    "train_source2": "dataset/train/train_source2.tsv",
+    "train_source3": "dataset/train/train_source3.tsv",
+    "test_source1": "dataset/test/test_source1.tsv",
+    "test_source2": "dataset/test/test_source2.tsv",
+    "test_source3": "dataset/test/test_source3.tsv",
+    "experiments_dir": "experiments",
+    "artifacts_dir": "artifacts",
+    "submission_matching_output": "output/matching_results.tsv",
+    "submission_candidate_output": "output/candidate_pairs.tsv"
+  },
+  "validation_split": {
+    "seed": 42,
+    "val_ratio": 0.2,
+    "stratify_by_country": true,
+    "stratify_by_singleton": true,
+    "fast_benchmark_samples": 10000,
+    "split_cache_path": "experiments/splits/validation_split_seed42.json"
+  },
+  "evaluation": {
+    "allow_missing_predictions": true,
+    "singleton_true_empty_pred_empty_score": 1.0,
+    "singleton_true_empty_pred_nonempty_score": 0.0,
+    "non_singleton_pred_empty_score": 0.0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-001E-A",
+  "hypothesis": "Evaluate recall recovery and candidate volume for Strategy E-A: Relaxed Numeric Address Keys.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full S2+S3 search pool (10,320,219 records).",
+  "blocking_method": "Strategy E-A: Relaxed Numeric Address Keys",
+  "features": [
+    "strategy_e-a:_relaxed_numeric_address_keys"
+  ],
+  "model": "Inverted Index Hash Table",
+  "hyperparameters": {
+    "country_restricted": true
+  },
+  "validation_method": "Candidate Pair Recall & Reduction Ratio",
+  "macro_F0_5": 0.785948890634048,
+  "precision": 0.006333569569621507,
+  "recall": 0.7733621310295177,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 8230.873801469803,
+  "notes": "Avg candidates/S1: 423.80, Median: 25, P95: 2074, Max: 18,872, Total pairs: 848,021",
+  "conclusion": "Pair recall: 77.34%, S2 recall: 79.71%, S3 recall: 75.15%, Reduction Ratio: 99.995894%.",
+  "next_experiment": "EXP-001E-Union",
+  "timestamp": "2026-09-25T10:24:27.192793+00:00",
+  "extra_metrics": {
+    "total_candidate_pairs": 848021,
+    "reduction_ratio": 0.9999589351155533,
+    "avg_candidates_per_s1": 423.7986006996502,
+    "median_candidates_per_s1": 25,
+    "p95_candidates_per_s1": 2074,
+    "max_candidates_per_s1": 18872,
+    "s2_recall": 0.7970623501199041,
+    "s3_recall": 0.7514546965918537,
+    "zero_candidate_entities": 27,
+    "perfect_recall_entities": 1075,
+    "missed_entities": 926
+  }
+}

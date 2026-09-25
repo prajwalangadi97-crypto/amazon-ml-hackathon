@@ -1,0 +1,82 @@
+{
+  "validation_s1_count": 2001,
+  "total_true_links": 6945,
+  "gt_s2_true": 3336,
+  "gt_s3_true": 3609,
+  "singletons": 112,
+  "source_row_counts": {
+    "train_source2.tsv": 5034616,
+    "train_source3.tsv": 5285603
+  },
+  "total_pool_rows": 10320219,
+  "results": {
+    "A": {
+      "strategy": "EXP-001A: Exact Name (Country)",
+      "pair_recall": 0.2044636429085673,
+      "retrieved_true": 1420,
+      "total_true": 6945,
+      "s2_recall": 0.19484412470023982,
+      "s3_recall": 0.21335550013854254,
+      "total_cands": 18893,
+      "avg_cands": 9.441779110444777,
+      "median_cands": 1,
+      "p95_cands": 58,
+      "max_cands": 378,
+      "reduction_ratio": 0.999999085118338,
+      "zero_cand": 602,
+      "perfect": 160,
+      "missed": 1841
+    },
+    "B": {
+      "strategy": "EXP-001B: Token Name (Country)",
+      "pair_recall": 0.734341252699784,
+      "retrieved_true": 5100,
+      "total_true": 6945,
+      "s2_recall": 0.7278177458033573,
+      "s3_recall": 0.7403712939872541,
+      "total_cands": 19615125,
+      "avg_cands": 9802.661169415293,
+      "median_cands": 3773,
+      "p95_cands": 35585,
+      "max_cands": 141806,
+      "reduction_ratio": 0.9990501498883487,
+      "zero_cand": 1,
+      "perfect": 918,
+      "missed": 1083
+    },
+    "C": {
+      "strategy": "EXP-001C: Address (Country)",
+      "pair_recall": 0.6047516198704104,
+      "retrieved_true": 4200,
+      "total_true": 6945,
+      "s2_recall": 0.6303956834532374,
+      "s3_recall": 0.5810473815461347,
+      "total_cands": 539759,
+      "avg_cands": 269.74462768615695,
+      "median_cands": 10,
+      "p95_cands": 1285,
+      "max_cands": 36233,
+      "reduction_ratio": 0.9999738625093434,
+      "zero_cand": 81,
+      "perfect": 687,
+      "missed": 1314
+    },
+    "D": {
+      "strategy": "EXP-001D: Union A+B+C (Country)",
+      "pair_recall": 0.8921526277897768,
+      "retrieved_true": 6196,
+      "total_true": 6945,
+      "s2_recall": 0.8935851318944844,
+      "s3_recall": 0.8908284843446939,
+      "total_cands": 20149645,
+      "avg_cands": 10069.787606196902,
+      "median_cands": 3971,
+      "p95_cands": 35619,
+      "max_cands": 141806,
+      "reduction_ratio": 0.9990242660929776,
+      "zero_cand": 0,
+      "perfect": 1470,
+      "missed": 531
+    }
+  }
+}

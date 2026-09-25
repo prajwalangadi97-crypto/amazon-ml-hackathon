@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-001E-C",
+  "hypothesis": "Evaluate recall recovery and candidate volume for Strategy E-C: Name-Locality Cross-Field Keys.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full S2+S3 search pool (10,320,219 records).",
+  "blocking_method": "Strategy E-C: Name-Locality Cross-Field Keys",
+  "features": [
+    "strategy_e-c:_name-locality_cross-field_keys"
+  ],
+  "model": "Inverted Index Hash Table",
+  "hyperparameters": {
+    "country_restricted": true
+  },
+  "validation_method": "Candidate Pair Recall & Reduction Ratio",
+  "macro_F0_5": 0.6870239483432886,
+  "precision": 0.07476019858930895,
+  "recall": 0.6699784017278617,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 8230.873801469803,
+  "notes": "Avg candidates/S1: 31.10, Median: 6, P95: 135, Max: 3,259, Total pairs: 62,239",
+  "conclusion": "Pair recall: 67.00%, S2 recall: 70.17%, S3 recall: 64.06%, Reduction Ratio: 99.999699%.",
+  "next_experiment": "EXP-001E-Union",
+  "timestamp": "2026-09-25T10:24:27.230203+00:00",
+  "extra_metrics": {
+    "total_candidate_pairs": 62239,
+    "reduction_ratio": 0.9999969861155052,
+    "avg_candidates_per_s1": 31.103948025987005,
+    "median_candidates_per_s1": 6,
+    "p95_candidates_per_s1": 135,
+    "max_candidates_per_s1": 3259,
+    "s2_recall": 0.7017386091127098,
+    "s3_recall": 0.6406206705458576,
+    "zero_candidate_entities": 72,
+    "perfect_recall_entities": 796,
+    "missed_entities": 1205
+  }
+}

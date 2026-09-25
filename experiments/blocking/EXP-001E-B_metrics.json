@@ -1,0 +1,141 @@
+{
+  "strategy_id": "EXP-001E-B",
+  "strategy_name": "Strategy E-B: Domain/Handle & Salient Tokens",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 5651,
+  "pair_recall": 0.813678905687545,
+  "macro_candidate_recall": 0.8202113229099736,
+  "s2_recall": 0.8033573141486811,
+  "s3_recall": 0.8232197284566362,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 2680,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 2971,
+  "total_candidate_pairs": 36479319,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.9982335118830438,
+  "avg_candidates_per_s1": 18230.544227886057,
+  "median_candidates_per_s1": 9571,
+  "p95_candidates_per_s1": 57800,
+  "max_candidates_per_s1": 170907,
+  "entities_with_zero_candidates": 7,
+  "entities_with_all_true_retrieved": 1255,
+  "entities_with_missed_true_matches": 746,
+  "runtime_seconds": 8230.873801469803,
+  "peak_memory_mb": 3350.3632020950317,
+  "country_restricted": true,
+  "config": {
+    "country_restricted": true
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S3-588502663",
+      "target_name": "Hendricks and Inc Flowers",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S2-442723188",
+      "target_name": "Chordia + Pagnters - 7306204978",
+      "target_address": "\u0939\u0930\u093f\u092f\u093e\u0923\u093e, DOOR NO 1038 SECTOR 9, FARIDABAD",
+      "target_country": "India"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-249013014",
+      "target_name": "\u0bb0\u0bbe\u0b9c\u0bcd \u0b87\u0ba9\u0bcd\u0bb5\u0bc6\u0bb8\u0bcd\u0b9f\u0bcd\u0bae\u0bc6\u0ba3\u0bcd\u0b9f\u0bcd\u0bb8\u0bcd \u0b8e\u0bb2\u0bcd\u0b8e\u0bb2\u0bcd\u0baa\u0bbf",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-292935703",
+      "s1_name": "Cozy Grill",
+      "s1_address": "617 Fourth Street, Watseka, IL",
+      "s1_country": "US",
+      "target_id": "S3-942647343",
+      "target_name": "Cozy Gle",
+      "target_address": "617 4th Street, Watseka, Illinois",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-463669205",
+      "s1_name": "Beacon Municipals LLC",
+      "s1_address": "15602 60, Borden, IN",
+      "s1_country": "US",
+      "target_id": "S3-242940401",
+      "target_name": "LLC 8eacon Muniecipafs",
+      "target_address": "15602 60, Borden, Indiana",
+      "target_country": "US"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-864917565",
+      "candidate_count": 170907,
+      "s1_name": "Pediatric Dental Clinic of Chelsea",
+      "s1_address": "9 Sixth Street, Unit 2, Chelsea, MA",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-500206031",
+      "candidate_count": 167752,
+      "s1_name": "Pediatric Dentistry Cascade Clinic",
+      "s1_address": "6 Last Left Lane, Rockingham County, VA",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-299280622",
+      "candidate_count": 162159,
+      "s1_name": "Internal Medicine Trusted Clinic",
+      "s1_address": "57 Main Street, Unit E, Clarksville, OH",
+      "s1_country": "US"
+    }
+  ],
+  "sample_zero_candidate_entities": [
+    {
+      "s1_id": "S1-806800997",
+      "s1_name": "Dee & Co",
+      "s1_address": "C-4/70 A Vineet Khand, Gomtinagar, Lucknow, Uttar Pradesh",
+      "s1_country": "India",
+      "true_match_count": 3
+    },
+    {
+      "s1_id": "S1-687044089",
+      "s1_name": "VU Lng LLC",
+      "s1_address": "6126 Stoneham Lane, Fairfax County, VA",
+      "s1_country": "US",
+      "true_match_count": 4
+    },
+    {
+      "s1_id": "S1-34644459",
+      "s1_name": "Bw For Private Limited",
+      "s1_address": "64F/1 Linton Street, Kolkata, Calcutta, West Bengal",
+      "s1_country": "India",
+      "true_match_count": 2
+    }
+  ]
+}

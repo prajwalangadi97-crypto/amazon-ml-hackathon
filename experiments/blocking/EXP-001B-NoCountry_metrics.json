@@ -1,0 +1,127 @@
+{
+  "strategy_id": "EXP-001B-NoCountry",
+  "strategy_name": "Strategy B (No Country)",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 5100,
+  "pair_recall": 0.734341252699784,
+  "macro_candidate_recall": 0.7444511871048602,
+  "s2_recall": 0.7278177458033573,
+  "s3_recall": 0.7403712939872541,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 2428,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 2672,
+  "total_candidate_pairs": 24452441,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.9988159058984332,
+  "avg_candidates_per_s1": 12220.11044477761,
+  "median_candidates_per_s1": 4887,
+  "p95_candidates_per_s1": 47489,
+  "max_candidates_per_s1": 174629,
+  "entities_with_zero_candidates": 1,
+  "entities_with_all_true_retrieved": 918,
+  "entities_with_missed_true_matches": 1083,
+  "runtime_seconds": 3921.377691268921,
+  "peak_memory_mb": 2655.3152589797974,
+  "country_restricted": false,
+  "config": {
+    "country_restricted": false
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S2-648035184",
+      "target_name": "Hendricks and  Flowers Inc",
+      "target_address": "CT, SLEEPY HOLLOW DRIVE, DANBURY",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S2-7028416",
+      "target_name": "Chordia & Partners Company",
+      "target_address": "\u0939\u0930\u093f\u092f\u093e\u0923\u093e, 1038 SECTOR 9, FARIDABAD",
+      "target_country": "India"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S3-384364074",
+      "target_name": "\u0bb0\u0bbe\u0b9c\u0bcd \u0b87\u0ba9\u0bcd\u0bb5\u0bc6\u0bb8\u0bcd\u0b9f\u0bcd\u0bae\u0bc6\u0ba3\u0bcd\u0b9f\u0bcd\u0bb8\u0bcd \u0b8e\u0bb2\u0bcd\u0b8e\u0bb2\u0bcd\u0baa\u0bbf",
+      "target_address": "6(29), C.i.t. Colony, 2Nd Main Road Mylapore, Chennai, \u0ba4\u0bae\u0bbf\u0bb4\u0bcd\u0ba8\u0bbe\u0b9f\u0bc1",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S3-523120965",
+      "target_name": "Smt Chordia  & Center",
+      "target_address": "#1038 Sector 9, Faridabad, \u0939\u0930\u093f\u092f\u093e\u0923\u093e",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-292935703",
+      "s1_name": "Cozy Grill",
+      "s1_address": "617 Fourth Street, Watseka, IL",
+      "s1_country": "US",
+      "target_id": "S2-195749344",
+      "target_name": "gcozy.com",
+      "target_address": "617 FOURTH ST, WATSEKA, IL",
+      "target_country": "US"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-456900390",
+      "candidate_count": 174629,
+      "s1_name": "Urgent Care Gulf Partners LLC",
+      "s1_address": "Winterset, 824 4th Avenue, IA",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-497250243",
+      "candidate_count": 158949,
+      "s1_name": "Trinity Church Partners",
+      "s1_address": "84 Ranney Way, Unit BLDG 2, Long Lake, NY",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-33649305",
+      "candidate_count": 158936,
+      "s1_name": "Dental Partners L.L.C.",
+      "s1_address": "Bldg PARKER ROAD PRESCHOOL, Shrewsbury, 15 Parker Road, MA",
+      "s1_country": "US"
+    }
+  ],
+  "sample_zero_candidate_entities": [
+    {
+      "s1_id": "S1-34644459",
+      "s1_name": "Bw For Private Limited",
+      "s1_address": "64F/1 Linton Street, Kolkata, Calcutta, West Bengal",
+      "s1_country": "India",
+      "true_match_count": 2
+    }
+  ]
+}

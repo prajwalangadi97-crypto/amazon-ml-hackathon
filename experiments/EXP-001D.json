@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-001D",
+  "hypothesis": "Evaluate recall recovery and candidate volume for Baseline Strategy D (Exact + Token + Address).",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full S2+S3 search pool (10,320,219 records).",
+  "blocking_method": "Baseline Strategy D (Exact + Token + Address)",
+  "features": [
+    "baseline_strategy_d_(exact_+_token_+_address)"
+  ],
+  "model": "Inverted Index Hash Table",
+  "hyperparameters": {
+    "country_restricted": true
+  },
+  "validation_method": "Candidate Pair Recall & Reduction Ratio",
+  "macro_F0_5": 0.8973620332690797,
+  "precision": 0.0003074992140060036,
+  "recall": 0.8921526277897768,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 8230.873801469803,
+  "notes": "Avg candidates/S1: 10069.79, Median: 3971, P95: 35619, Max: 141,806, Total pairs: 20,149,645",
+  "conclusion": "Pair recall: 89.22%, S2 recall: 89.36%, S3 recall: 89.08%, Reduction Ratio: 99.902427%.",
+  "next_experiment": "EXP-002",
+  "timestamp": "2026-09-25T10:24:27.176272+00:00",
+  "extra_metrics": {
+    "total_candidate_pairs": 20149645,
+    "reduction_ratio": 0.9990242660929776,
+    "avg_candidates_per_s1": 10069.787606196902,
+    "median_candidates_per_s1": 3971,
+    "p95_candidates_per_s1": 35619,
+    "max_candidates_per_s1": 141806,
+    "s2_recall": 0.8935851318944844,
+    "s3_recall": 0.8908284843446939,
+    "zero_candidate_entities": 0,
+    "perfect_recall_entities": 1470,
+    "missed_entities": 531
+  }
+}

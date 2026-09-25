@@ -1,0 +1,141 @@
+{
+  "strategy_id": "EXP-001E-A",
+  "strategy_name": "Strategy E-A: Relaxed Numeric Address Keys",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 5371,
+  "pair_recall": 0.7733621310295177,
+  "macro_candidate_recall": 0.785948890634048,
+  "s2_recall": 0.7970623501199041,
+  "s3_recall": 0.7514546965918537,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 2659,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 2712,
+  "total_candidate_pairs": 848021,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.9999589351155533,
+  "avg_candidates_per_s1": 423.7986006996502,
+  "median_candidates_per_s1": 25,
+  "p95_candidates_per_s1": 2074,
+  "max_candidates_per_s1": 18872,
+  "entities_with_zero_candidates": 27,
+  "entities_with_all_true_retrieved": 1075,
+  "entities_with_missed_true_matches": 926,
+  "runtime_seconds": 8230.873801469803,
+  "peak_memory_mb": 3350.3632020950317,
+  "country_restricted": true,
+  "config": {
+    "country_restricted": true
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S2-648035184",
+      "target_name": "Hendricks and  Flowers Inc",
+      "target_address": "CT, SLEEPY HOLLOW DRIVE, DANBURY",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S2-442723188",
+      "target_name": "Chordia + Pagnters - 7306204978",
+      "target_address": "\u0939\u0930\u093f\u092f\u093e\u0923\u093e, DOOR NO 1038 SECTOR 9, FARIDABAD",
+      "target_country": "India"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S3-588502663",
+      "target_name": "Hendricks and Inc Flowers",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-65263544",
+      "s1_name": "Caldeon Nova",
+      "s1_address": "1 Greenbrier Drive, Kimberling City, MO",
+      "s1_country": "US",
+      "target_id": "S2-998270769",
+      "target_name": "CALDEON NOVA LLC",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-292935703",
+      "s1_name": "Cozy Grill",
+      "s1_address": "617 Fourth Street, Watseka, IL",
+      "s1_country": "US",
+      "target_id": "S3-421403180",
+      "target_name": "Cozy [Gr\u00edll]",
+      "target_address": "Fourth Saint, Watseka, Illinois",
+      "target_country": "US"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-206069226",
+      "candidate_count": 18872,
+      "s1_name": "Foot & Ankle Group PLLC",
+      "s1_address": "2535 New York Avenue, Huntington, NY",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-44112672",
+      "candidate_count": 16102,
+      "s1_name": "Speed Foundation",
+      "s1_address": "Old No 4 New No 2 Bharathiyar Street Hl Colony, Pammal, Cheennai, Chennai, Tamil Nadu",
+      "s1_country": "India"
+    },
+    {
+      "s1_id": "S1-945360052",
+      "candidate_count": 13177,
+      "s1_name": "Rachana Reality",
+      "s1_address": "West Bengal, Kolkata, 170/1 Lower Circuler Road, Howrah, Kolkata",
+      "s1_country": "India"
+    }
+  ],
+  "sample_zero_candidate_entities": [
+    {
+      "s1_id": "S1-731542669",
+      "s1_name": "Blankenship and Russo Inc",
+      "s1_address": "1339 E Street, Unit 306, Washington, DC",
+      "s1_country": "US",
+      "true_match_count": 5
+    },
+    {
+      "s1_id": "S1-705293979",
+      "s1_name": "Poulsbo Express Fortress",
+      "s1_address": "470 Sommerseth Street, Poulsbo, WA",
+      "s1_country": "US",
+      "true_match_count": 1
+    },
+    {
+      "s1_id": "S1-299367178",
+      "s1_name": "American Legacy Islands Inc",
+      "s1_address": "729 Cr 11, Tiffin, OH",
+      "s1_country": "US",
+      "true_match_count": 2
+    }
+  ]
+}

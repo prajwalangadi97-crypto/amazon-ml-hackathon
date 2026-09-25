@@ -1,0 +1,141 @@
+{
+  "strategy_id": "EXP-001C-NoCountry",
+  "strategy_name": "Strategy C (No Country)",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 4200,
+  "pair_recall": 0.6047516198704104,
+  "macro_candidate_recall": 0.6313279868002507,
+  "s2_recall": 0.6303956834532374,
+  "s3_recall": 0.5810473815461347,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 2103,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 2097,
+  "total_candidate_pairs": 549237,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.9999734035431448,
+  "avg_candidates_per_s1": 274.48125937031483,
+  "median_candidates_per_s1": 11,
+  "p95_candidates_per_s1": 1285,
+  "max_candidates_per_s1": 36330,
+  "entities_with_zero_candidates": 81,
+  "entities_with_all_true_retrieved": 687,
+  "entities_with_missed_true_matches": 1314,
+  "runtime_seconds": 3921.377691268921,
+  "peak_memory_mb": 2655.3152589797974,
+  "country_restricted": false,
+  "config": {
+    "country_restricted": false
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S2-648035184",
+      "target_name": "Hendricks and  Flowers Inc",
+      "target_address": "CT, SLEEPY HOLLOW DRIVE, DANBURY",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S3-523120965",
+      "target_name": "Smt Chordia  & Center",
+      "target_address": "#1038 Sector 9, Faridabad, \u0939\u0930\u093f\u092f\u093e\u0923\u093e",
+      "target_country": "India"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S3-588502663",
+      "target_name": "Hendricks and Inc Flowers",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S2-7028416",
+      "target_name": "Chordia & Partners Company",
+      "target_address": "\u0939\u0930\u093f\u092f\u093e\u0923\u093e, 1038 SECTOR 9, FARIDABAD",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-65263544",
+      "s1_name": "Caldeon Nova",
+      "s1_address": "1 Greenbrier Drive, Kimberling City, MO",
+      "s1_country": "US",
+      "target_id": "S2-180463458",
+      "target_name": "CALDEON NOVA",
+      "target_address": "MO, KIMBERLING CITY, 1 GREENBRIER DRIVE",
+      "target_country": "US"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-371874635",
+      "candidate_count": 36330,
+      "s1_name": "NL Services Pvt. Ltd.",
+      "s1_address": "New Delhi, South Delhi, C-35 South Extension Part I, Delhi",
+      "s1_country": "India"
+    },
+    {
+      "s1_id": "S1-206069226",
+      "candidate_count": 18787,
+      "s1_name": "Foot & Ankle Group PLLC",
+      "s1_address": "2535 New York Avenue, Huntington, NY",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-861067626",
+      "candidate_count": 11796,
+      "s1_name": "Tejam Trading Private Limited",
+      "s1_address": "Mumbai City, 202, Maharashtra, 2Nd Flr, Embassy Chambers, 3Rd Road, Opp Simran Plaza, Khar (West), Mumbai",
+      "s1_country": "India"
+    }
+  ],
+  "sample_zero_candidate_entities": [
+    {
+      "s1_id": "S1-289512402",
+      "s1_name": "Safe Supply International",
+      "s1_address": "TX, Cypress, 20126 Crossvine Trail Lane",
+      "s1_country": "US",
+      "true_match_count": 4
+    },
+    {
+      "s1_id": "S1-705293979",
+      "s1_name": "Poulsbo Express Fortress",
+      "s1_address": "470 Sommerseth Street, Poulsbo, WA",
+      "s1_country": "US",
+      "true_match_count": 1
+    },
+    {
+      "s1_id": "S1-810457001",
+      "s1_name": "Rebrique LLC",
+      "s1_address": "AL, Decatur, 3736 Chula Vista Drive",
+      "s1_country": "US",
+      "true_match_count": 2
+    }
+  ]
+}

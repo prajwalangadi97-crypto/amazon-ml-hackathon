@@ -1,0 +1,119 @@
+{
+  "strategy_id": "EXP-001D",
+  "strategy_name": "Baseline Strategy D (Exact + Token + Address)",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 6196,
+  "pair_recall": 0.8921526277897768,
+  "macro_candidate_recall": 0.8973620332690797,
+  "s2_recall": 0.8935851318944844,
+  "s3_recall": 0.8908284843446939,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 2981,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 3215,
+  "total_candidate_pairs": 20149645,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.9990242660929776,
+  "avg_candidates_per_s1": 10069.787606196902,
+  "median_candidates_per_s1": 3971,
+  "p95_candidates_per_s1": 35619,
+  "max_candidates_per_s1": 141806,
+  "entities_with_zero_candidates": 0,
+  "entities_with_all_true_retrieved": 1470,
+  "entities_with_missed_true_matches": 531,
+  "runtime_seconds": 8230.873801469803,
+  "peak_memory_mb": 3350.3632020950317,
+  "country_restricted": true,
+  "config": {
+    "country_restricted": true
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S3-588502663",
+      "target_name": "Hendricks and Inc Flowers",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S3-523120965",
+      "target_name": "Smt Chordia  & Center",
+      "target_address": "#1038 Sector 9, Faridabad, \u0939\u0930\u093f\u092f\u093e\u0923\u093e",
+      "target_country": "India"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S2-442723188",
+      "target_name": "Chordia + Pagnters - 7306204978",
+      "target_address": "\u0939\u0930\u093f\u092f\u093e\u0923\u093e, DOOR NO 1038 SECTOR 9, FARIDABAD",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-292935703",
+      "s1_name": "Cozy Grill",
+      "s1_address": "617 Fourth Street, Watseka, IL",
+      "s1_country": "US",
+      "target_id": "S3-942647343",
+      "target_name": "Cozy Gle",
+      "target_address": "617 4th Street, Watseka, Illinois",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-463669205",
+      "s1_name": "Beacon Municipals LLC",
+      "s1_address": "15602 60, Borden, IN",
+      "s1_country": "US",
+      "target_id": "S2-301757320",
+      "target_name": "Beacon Mumnicilpas LLC",
+      "target_address": "1560 60, BORDEN, IN",
+      "target_country": "US"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-456900390",
+      "candidate_count": 141806,
+      "s1_name": "Urgent Care Gulf Partners LLC",
+      "s1_address": "Winterset, 824 4th Avenue, IA",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-497250243",
+      "candidate_count": 126130,
+      "s1_name": "Trinity Church Partners",
+      "s1_address": "84 Ranney Way, Unit BLDG 2, Long Lake, NY",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-33649305",
+      "candidate_count": 126119,
+      "s1_name": "Dental Partners L.L.C.",
+      "s1_address": "Bldg PARKER ROAD PRESCHOOL, Shrewsbury, 15 Parker Road, MA",
+      "s1_country": "US"
+    }
+  ],
+  "sample_zero_candidate_entities": []
+}

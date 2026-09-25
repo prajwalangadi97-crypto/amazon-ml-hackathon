@@ -1,0 +1,141 @@
+{
+  "strategy_id": "EXP-001A-NoCountry",
+  "strategy_name": "Strategy A (No Country)",
+  "total_val_entities": 2001,
+  "total_true_matches": 6945,
+  "retrieved_true_matches": 1420,
+  "pair_recall": 0.2044636429085673,
+  "macro_candidate_recall": 0.24733169129720853,
+  "s2_recall": 0.19484412470023982,
+  "s3_recall": 0.21335550013854254,
+  "s2_true_count": 3336,
+  "s2_retrieved_count": 650,
+  "s3_true_count": 3609,
+  "s3_retrieved_count": 770,
+  "total_candidate_pairs": 18939,
+  "full_search_space_size": 20650758219,
+  "reduction_ratio": 0.999999082890817,
+  "avg_candidates_per_s1": 9.464767616191905,
+  "median_candidates_per_s1": 1,
+  "p95_candidates_per_s1": 58,
+  "max_candidates_per_s1": 378,
+  "entities_with_zero_candidates": 602,
+  "entities_with_all_true_retrieved": 160,
+  "entities_with_missed_true_matches": 1841,
+  "runtime_seconds": 3921.377691268921,
+  "peak_memory_mb": 2655.3152589797974,
+  "country_restricted": false,
+  "config": {
+    "country_restricted": false
+  },
+  "sample_retrieved_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S2-197070651",
+      "target_name": "Raj Investments LLP",
+      "target_address": "6(29), C.I.T. COLONY, 2ND MAIN ROAD MYLAPORE, CHENNAI, Tamil Nadu",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S2-648035184",
+      "target_name": "Hendricks and  Flowers Inc",
+      "target_address": "CT, SLEEPY HOLLOW DRIVE, DANBURY",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-65263544",
+      "s1_name": "Caldeon Nova",
+      "s1_address": "1 Greenbrier Drive, Kimberling City, MO",
+      "s1_country": "US",
+      "target_id": "S2-881122703",
+      "target_name": "Caldeon  Nova",
+      "target_address": "GREENBRIER DRIVE, KIMBERLING CITY, MO",
+      "target_country": "US"
+    }
+  ],
+  "sample_missed_matches": [
+    {
+      "s1_id": "S1-55344266",
+      "s1_name": "Raj Investments LLP",
+      "s1_address": "6(29), C.I.T. Colony, 2Nd Main Road Mylapore, Chennai, Tamil Nadu",
+      "s1_country": "India",
+      "target_id": "S3-384364074",
+      "target_name": "\u0bb0\u0bbe\u0b9c\u0bcd \u0b87\u0ba9\u0bcd\u0bb5\u0bc6\u0bb8\u0bcd\u0b9f\u0bcd\u0bae\u0bc6\u0ba3\u0bcd\u0b9f\u0bcd\u0bb8\u0bcd \u0b8e\u0bb2\u0bcd\u0b8e\u0bb2\u0bcd\u0baa\u0bbf",
+      "target_address": "6(29), C.i.t. Colony, 2Nd Main Road Mylapore, Chennai, \u0ba4\u0bae\u0bbf\u0bb4\u0bcd\u0ba8\u0bbe\u0b9f\u0bc1",
+      "target_country": "India"
+    },
+    {
+      "s1_id": "S1-29845983",
+      "s1_name": "Hendricks and Flowers Inc",
+      "s1_address": "33 Sleepy Hollow Drive, Danbury, CT",
+      "s1_country": "US",
+      "target_id": "S3-588502663",
+      "target_name": "Hendricks and Inc Flowers",
+      "target_address": "",
+      "target_country": "US"
+    },
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "target_id": "S3-523120965",
+      "target_name": "Smt Chordia  & Center",
+      "target_address": "#1038 Sector 9, Faridabad, \u0939\u0930\u093f\u092f\u093e\u0923\u093e",
+      "target_country": "India"
+    }
+  ],
+  "sample_large_candidate_entities": [
+    {
+      "s1_id": "S1-960361259",
+      "candidate_count": 378,
+      "s1_name": "Eye Group",
+      "s1_address": "377 Knollwood Drive, Forest City, NC",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-655564816",
+      "candidate_count": 334,
+      "s1_name": "Meridian LLC",
+      "s1_address": "2055 Wheelwright Avenue, Cincinnati, OH",
+      "s1_country": "US"
+    },
+    {
+      "s1_id": "S1-666802445",
+      "candidate_count": 314,
+      "s1_name": "Orthopedic Group",
+      "s1_address": "1382 Chadwick Circle, Memphis, TN",
+      "s1_country": "US"
+    }
+  ],
+  "sample_zero_candidate_entities": [
+    {
+      "s1_id": "S1-7293388",
+      "s1_name": "Chordia & Partners",
+      "s1_address": "Faridabad, 1038 Sector 9, Haryana",
+      "s1_country": "India",
+      "true_match_count": 4
+    },
+    {
+      "s1_id": "S1-463669205",
+      "s1_name": "Beacon Municipals LLC",
+      "s1_address": "15602 60, Borden, IN",
+      "s1_country": "US",
+      "true_match_count": 2
+    },
+    {
+      "s1_id": "S1-790589419",
+      "s1_name": "Christy Tech (India) Limited",
+      "s1_address": "House No 707, 2 At Sarole, Post Vanasgoan, Niphad, Nashik, Maharashtra",
+      "s1_country": "India",
+      "true_match_count": 4
+    }
+  ]
+}

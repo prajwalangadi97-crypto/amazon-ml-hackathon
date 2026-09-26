@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-002A-TwoTier-H0.60-L0.35-Cap100",
+  "hypothesis": "Evaluate candidate compression policy Tier1 >= 0.60 + Tier2 >= 0.35, Cap 100 using cheap pairwise score.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full search pool (10,320,219 records).",
+  "blocking_method": "D + E-A + E-C with RapidFuzz Candidate Compression",
+  "features": [
+    "cheap_pairwise_rapidfuzz_score"
+  ],
+  "model": "RapidFuzz Deterministic Adaptive Compression",
+  "hyperparameters": {
+    "policy_id": "TwoTier-H0.60-L0.35-Cap100",
+    "method": "two_tier"
+  },
+  "validation_method": "Candidate Pair Recall & Compression Ratio",
+  "macro_F0_5": 0.8769646922570461,
+  "precision": 0.03379061142648545,
+  "recall": 0.8742980561555076,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 395.5691614151001,
+  "notes": "Total cands: 189,017, Avg: 94.5, Med: 100, P95: 100, Max: 100, Removed: 99.09%",
+  "conclusion": "Pair recall: 87.43%, S2: 86.96%, S3: 87.86%, Recall Lost: 4.54%, Compression: 99.09%.",
+  "next_experiment": "EXP-002B",
+  "timestamp": "2026-09-25T17:44:52.432420+00:00",
+  "extra_metrics": {
+    "policy_id": "TwoTier-H0.60-L0.35-Cap100",
+    "policy_name": "Tier1 >= 0.60 + Tier2 >= 0.35, Cap 100",
+    "method": "two_tier",
+    "pair_recall": 0.8742980561555076,
+    "macro_candidate_recall": 0.8769646922570461,
+    "s2_recall": 0.8696043165467626,
+    "s3_recall": 0.8786367414796342,
+    "total_candidates": 189017,
+    "avg_candidates_per_s1": 94.46126936531734,
+    "median_candidates_per_s1": 100,
+    "p95_candidates_per_s1": 100,
+    "max_candidates_per_s1": 100,
+    "zero_candidate_entities": 0,
+    "perfect_recall_entities": 1483,
+    "missed_entities": 518,
+    "broad_candidate_count": 20738149,
+    "compressed_candidate_count": 189017,
+    "compression_ratio": 0.9908855414241647,
+    "pct_candidates_removed": 99.08855414241647,
+    "recall_lost_relative_to_broad": 4.535637149028071,
+    "runtime_seconds": 0.23347926139831543
+  }
+}

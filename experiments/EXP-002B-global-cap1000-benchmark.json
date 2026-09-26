@@ -1,0 +1,19 @@
+{
+  "experiment": "EXP-002B: Priority Protection + Global Cap 1000",
+  "validation_entities": 2001,
+  "total_true_matches": 6945,
+  "global_cap": 1000,
+  "pair_recall": 0.9300215982721383,
+  "s2_recall": 0.9310551558752997,
+  "s3_recall": 0.9290662233305624,
+  "retrieved_true_matches": 6459,
+  "total_candidates": 1598014,
+  "avg_candidates_per_s1": 798.6076961519241,
+  "num_hitting_cap": 1445,
+  "pct_hitting_cap": 72.21389305347327,
+  "recovered_previously_missed_links": 93,
+  "delta_recall_vs_92_20_pipeline": 0.8063354931605593,
+  "delta_recall_vs_91_97_baseline": 1.0367170626349953,
+  "runtime_seconds": 395.2470910549164,
+  "peak_ram_mb": 827.8702249526978
+}

@@ -1,0 +1,21 @@
+====================================================================================================
+EXP-002B: IMPROVED CANDIDATE COMPRESSION BENCHMARK REPORT
+====================================================================================================
+Validation Entities     : 2,001 Source 1 entities
+Search Pool Size        : 10,320,219 records (Source 2 + Source 3)
+Total Ground Truth      : 6,945 true links
+Filter & Compression    : max_key_fanout=15, max_generic_per_s1=150
+Generic Key Threshold   : fanout >= 5
+
+BENCHMARK METRICS:
+  Pair Recall                     : 94.02% (6,530 / 6,945)
+    Source 2 Recall               : 94.09% (3,139 / 3,336)
+    Source 3 Recall               : 93.96% (3,391 / 3,609)
+  Total Candidates                : 5,734,310 (vs 3,345,467 previous)
+  Avg Candidates / S1             : 2865.72 (vs 1671.90 previous)
+  Entities Hitting 2,400 Cap      : 1,128 (56.37%) [vs 1,075 / 53.7% previous]
+  Previously Missed Links Recovered: 127 links
+  Recall Delta vs 92.20% Pipeline : +1.83%
+  Runtime                         : 356.46s
+  Peak RAM                        : 913.02 MB
+====================================================================================================

@@ -1,0 +1,543 @@
+{
+  "analysis": "FULL TEST S1 BLOCKING-KEY DISTRIBUTION ANALYSIS",
+  "dataset": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\dataset\\test\\test_source1.tsv",
+  "total_test_s1_records": 1732544,
+  "runtime_seconds": 1368.75989818573,
+  "peak_ram_mb": 2100.597668647766,
+  "countries": {
+    "France": {
+      "country": "France",
+      "total_s1_entities": 259452,
+      "total_unique_blocking_keys": 991097,
+      "total_postings": 2734444,
+      "avg_keys_per_entity": 10.539305921711916,
+      "max_fanout": 8368,
+      "max_fanout_key": "tk_amicale",
+      "top_15_keys": [
+        {
+          "key": "tk_amicale",
+          "fanout": 8368,
+          "ratio_pct": 3.225259392874212
+        },
+        {
+          "key": "loc_hauts_france",
+          "fanout": 6686,
+          "ratio_pct": 2.576969921218568
+        },
+        {
+          "key": "ak_loc_hauts_france",
+          "fanout": 6684,
+          "ratio_pct": 2.5761990657231397
+        },
+        {
+          "key": "loc_nouvelle_aquitaine",
+          "fanout": 5615,
+          "ratio_pct": 2.1641768034164315
+        },
+        {
+          "key": "ak_loc_nouvelle_aquitaine",
+          "fanout": 5614,
+          "ratio_pct": 2.1637913756687173
+        },
+        {
+          "key": "tk_sportive",
+          "fanout": 5535,
+          "ratio_pct": 2.1333425835992785
+        },
+        {
+          "key": "tk_maison",
+          "fanout": 5472,
+          "ratio_pct": 2.1090606354932704
+        },
+        {
+          "key": "tk_\u00e9tablissements",
+          "fanout": 5160,
+          "ratio_pct": 1.9888071782063734
+        },
+        {
+          "key": "tk_pharmacie",
+          "fanout": 5047,
+          "ratio_pct": 1.9452538427146449
+        },
+        {
+          "key": "tk_primaire",
+          "fanout": 4937,
+          "ratio_pct": 1.9028567904660592
+        },
+        {
+          "key": "ak_loc_pays_loire",
+          "fanout": 4872,
+          "ratio_pct": 1.8778039868646224
+        },
+        {
+          "key": "loc_pays_loire",
+          "fanout": 4872,
+          "ratio_pct": 1.8778039868646224
+        },
+        {
+          "key": "tk_maternelle",
+          "fanout": 4537,
+          "ratio_pct": 1.7486856913802937
+        },
+        {
+          "key": "tk_bordeaux",
+          "fanout": 4386,
+          "ratio_pct": 1.6904861014754173
+        },
+        {
+          "key": "tk_association",
+          "fanout": 3796,
+          "ratio_pct": 1.4630837303239135
+        }
+      ],
+      "threshold_stats": [
+        {
+          "threshold": 15,
+          "raw_keys_ge_th": 20995,
+          "raw_pct_ge_th": 2.1183597569158215,
+          "filter_pruned_ge_th": 20252,
+          "filter_pct_ge_th": 2.043392321841354,
+          "postings_reduction_ge_th": 43.598588963606495,
+          "filter_pruned_gt_th": 18817,
+          "filter_pct_gt_th": 1.898603264867112
+        },
+        {
+          "threshold": 25,
+          "raw_keys_ge_th": 11691,
+          "raw_pct_ge_th": 1.1796019965755118,
+          "filter_pruned_ge_th": 11407,
+          "filter_pct_ge_th": 1.1509468800732925,
+          "postings_reduction_ge_th": 37.55823853039229,
+          "filter_pruned_gt_th": 10868,
+          "filter_pct_gt_th": 1.0965626976976017
+        },
+        {
+          "threshold": 50,
+          "raw_keys_ge_th": 4855,
+          "raw_pct_ge_th": 0.4898612345713891,
+          "filter_pruned_ge_th": 4788,
+          "filter_pct_ge_th": 0.48310104863600634,
+          "postings_reduction_ge_th": 29.33532374405912,
+          "filter_pruned_gt_th": 4661,
+          "filter_pct_gt_th": 0.47028696484804217
+        },
+        {
+          "threshold": 75,
+          "raw_keys_ge_th": 2862,
+          "raw_pct_ge_th": 0.28877092756813916,
+          "filter_pruned_ge_th": 2843,
+          "filter_pct_ge_th": 0.28685385991482165,
+          "postings_reduction_ge_th": 25.056172296817923,
+          "filter_pruned_gt_th": 2796,
+          "filter_pct_gt_th": 0.2821116399302995
+        },
+        {
+          "threshold": 100,
+          "raw_keys_ge_th": 1910,
+          "raw_pct_ge_th": 0.19271574830717883,
+          "filter_pruned_ge_th": 1902,
+          "filter_pct_ge_th": 0.19190856192683461,
+          "postings_reduction_ge_th": 22.093010498660785,
+          "filter_pruned_gt_th": 1879,
+          "filter_pct_gt_th": 0.18958790108334503
+        },
+        {
+          "threshold": 150,
+          "raw_keys_ge_th": 1080,
+          "raw_pct_ge_th": 0.1089701613464676,
+          "filter_pruned_ge_th": 1078,
+          "filter_pct_ge_th": 0.10876836475138155,
+          "postings_reduction_ge_th": 18.470592193513564,
+          "filter_pruned_gt_th": 1064,
+          "filter_pct_gt_th": 0.1073557885857792
+        },
+        {
+          "threshold": 200,
+          "raw_keys_ge_th": 743,
+          "raw_pct_ge_th": 0.07496743507446799,
+          "filter_pruned_ge_th": 742,
+          "filter_pct_ge_th": 0.07486653677692497,
+          "postings_reduction_ge_th": 16.38834073764173,
+          "filter_pruned_gt_th": 735,
+          "filter_pct_gt_th": 0.07416024869412378
+        },
+        {
+          "threshold": 300,
+          "raw_keys_ge_th": 425,
+          "raw_pct_ge_th": 0.042881776455785864,
+          "filter_pruned_ge_th": 425,
+          "filter_pct_ge_th": 0.042881776455785864,
+          "postings_reduction_ge_th": 13.593183842858,
+          "filter_pruned_gt_th": 424,
+          "filter_pct_gt_th": 0.04278087815824284
+        },
+        {
+          "threshold": 500,
+          "raw_keys_ge_th": 207,
+          "raw_pct_ge_th": 0.02088594759140629,
+          "filter_pruned_ge_th": 207,
+          "filter_pct_ge_th": 0.02088594759140629,
+          "postings_reduction_ge_th": 10.597108589534106,
+          "filter_pruned_gt_th": 206,
+          "filter_pct_gt_th": 0.020785049293863267
+        }
+      ]
+    },
+    "US": {
+      "country": "US",
+      "total_s1_entities": 663106,
+      "total_unique_blocking_keys": 4852239,
+      "total_postings": 7429661,
+      "avg_keys_per_entity": 11.204333847077239,
+      "max_fanout": 7035,
+      "max_fanout_key": "tk_partners",
+      "top_15_keys": [
+        {
+          "key": "tk_partners",
+          "fanout": 7035,
+          "ratio_pct": 1.0609163542480389
+        },
+        {
+          "key": "tk_pediatric",
+          "fanout": 6100,
+          "ratio_pct": 0.9199132567040564
+        },
+        {
+          "key": "tk_specialists",
+          "fanout": 5152,
+          "ratio_pct": 0.7769496882851309
+        },
+        {
+          "key": "tk_physicians",
+          "fanout": 4128,
+          "ratio_pct": 0.6225249055203843
+        },
+        {
+          "key": "tk_cardiology",
+          "fanout": 3344,
+          "ratio_pct": 0.5042934312161254
+        },
+        {
+          "key": "tk_metropolitan",
+          "fanout": 3340,
+          "ratio_pct": 0.5036902094084506
+        },
+        {
+          "key": "tk_continental",
+          "fanout": 3307,
+          "ratio_pct": 0.4987136294951335
+        },
+        {
+          "key": "tk_chiropractic",
+          "fanout": 3225,
+          "ratio_pct": 0.48634758243780035
+        },
+        {
+          "key": "tk_medicine",
+          "fanout": 3065,
+          "ratio_pct": 0.4622187101308087
+        },
+        {
+          "key": "tk_interstate",
+          "fanout": 3009,
+          "ratio_pct": 0.45377360482336154
+        },
+        {
+          "key": "tk_cornerstone",
+          "fanout": 2854,
+          "ratio_pct": 0.43039875977596337
+        },
+        {
+          "key": "tk_state_tri",
+          "fanout": 2842,
+          "ratio_pct": 0.42858909435293907
+        },
+        {
+          "key": "tk_integrated",
+          "fanout": 2817,
+          "ratio_pct": 0.4248189580549716
+        },
+        {
+          "key": "tk_physical_therapy",
+          "fanout": 2741,
+          "ratio_pct": 0.41335774370915057
+        },
+        {
+          "key": "tk_care_primary",
+          "fanout": 2663,
+          "ratio_pct": 0.40159491845949213
+        }
+      ],
+      "threshold_stats": [
+        {
+          "threshold": 15,
+          "raw_keys_ge_th": 21089,
+          "raw_pct_ge_th": 0.43462409827710463,
+          "filter_pruned_ge_th": 18667,
+          "filter_pct_ge_th": 0.38470899722787766,
+          "postings_reduction_ge_th": 14.621272760627974,
+          "filter_pruned_gt_th": 16961,
+          "filter_pct_gt_th": 0.3495499706424189
+        },
+        {
+          "threshold": 25,
+          "raw_keys_ge_th": 9825,
+          "raw_pct_ge_th": 0.20248384302586908,
+          "filter_pruned_ge_th": 8450,
+          "filter_pct_ge_th": 0.174146409523521,
+          "postings_reduction_ge_th": 12.076540235146664,
+          "filter_pruned_gt_th": 7937,
+          "filter_pct_gt_th": 0.16357397069682675
+        },
+        {
+          "threshold": 50,
+          "raw_keys_ge_th": 2879,
+          "raw_pct_ge_th": 0.059333433493280116,
+          "filter_pruned_ge_th": 2728,
+          "filter_pct_ge_th": 0.05622146806865861,
+          "postings_reduction_ge_th": 9.530919378421169,
+          "filter_pruned_gt_th": 2644,
+          "filter_pct_gt_th": 0.05449030849469698
+        },
+        {
+          "threshold": 75,
+          "raw_keys_ge_th": 1790,
+          "raw_pct_ge_th": 0.03689018615942042,
+          "filter_pruned_ge_th": 1766,
+          "filter_pct_ge_th": 0.03639556913828853,
+          "postings_reduction_ge_th": 8.776443501257997,
+          "filter_pruned_gt_th": 1745,
+          "filter_pct_gt_th": 0.03596277924479812
+        },
+        {
+          "threshold": 100,
+          "raw_keys_ge_th": 1500,
+          "raw_pct_ge_th": 0.03091356382074337,
+          "filter_pruned_ge_th": 1489,
+          "filter_pct_ge_th": 0.030686864352724587,
+          "postings_reduction_ge_th": 8.455984734700547,
+          "filter_pruned_gt_th": 1483,
+          "filter_pct_gt_th": 0.030563210097441614
+        },
+        {
+          "threshold": 150,
+          "raw_keys_ge_th": 1148,
+          "raw_pct_ge_th": 0.02365918084414226,
+          "filter_pruned_ge_th": 1148,
+          "filter_pct_ge_th": 0.02365918084414226,
+          "postings_reduction_ge_th": 7.8948689583548965,
+          "filter_pruned_gt_th": 1144,
+          "filter_pct_gt_th": 0.023576744673953612
+        },
+        {
+          "threshold": 200,
+          "raw_keys_ge_th": 852,
+          "raw_pct_ge_th": 0.017558904250182236,
+          "filter_pruned_ge_th": 852,
+          "filter_pct_ge_th": 0.017558904250182236,
+          "postings_reduction_ge_th": 7.2015264222687945,
+          "filter_pruned_gt_th": 849,
+          "filter_pct_gt_th": 0.017497077122540748
+        },
+        {
+          "threshold": 300,
+          "raw_keys_ge_th": 461,
+          "raw_pct_ge_th": 0.009500768614241796,
+          "filter_pruned_ge_th": 461,
+          "filter_pct_ge_th": 0.009500768614241796,
+          "postings_reduction_ge_th": 5.9592086368409,
+          "filter_pruned_gt_th": 460,
+          "filter_pct_gt_th": 0.009480159571694634
+        },
+        {
+          "threshold": 500,
+          "raw_keys_ge_th": 302,
+          "raw_pct_ge_th": 0.006223930849242999,
+          "filter_pruned_ge_th": 302,
+          "filter_pct_ge_th": 0.006223930849242999,
+          "postings_reduction_ge_th": 5.140315284910038,
+          "filter_pruned_gt_th": 301,
+          "filter_pct_gt_th": 0.006203321806695836
+        }
+      ]
+    },
+    "India": {
+      "country": "India",
+      "total_s1_entities": 809986,
+      "total_unique_blocking_keys": 4192855,
+      "total_postings": 8463517,
+      "avg_keys_per_entity": 10.448967019183048,
+      "max_fanout": 15117,
+      "max_fanout_key": "tk_technologies",
+      "top_15_keys": [
+        {
+          "key": "tk_technologies",
+          "fanout": 15117,
+          "ratio_pct": 1.8663285538268564
+        },
+        {
+          "key": "tk_brothers",
+          "fanout": 15008,
+          "ratio_pct": 1.8528715311128836
+        },
+        {
+          "key": "tk_foundation",
+          "fanout": 12148,
+          "ratio_pct": 1.4997790085260734
+        },
+        {
+          "key": "tk_consultants",
+          "fanout": 10791,
+          "ratio_pct": 1.3322452486833105
+        },
+        {
+          "key": "tk_consultancy",
+          "fanout": 10616,
+          "ratio_pct": 1.3106399369865651
+        },
+        {
+          "key": "tk_technology",
+          "fanout": 10513,
+          "ratio_pct": 1.2979236678164807
+        },
+        {
+          "key": "tk_developers",
+          "fanout": 10185,
+          "ratio_pct": 1.2574291407505809
+        },
+        {
+          "key": "tk_marketing",
+          "fanout": 9359,
+          "ratio_pct": 1.1554520695419428
+        },
+        {
+          "key": "tk_engineering",
+          "fanout": 9084,
+          "ratio_pct": 1.121500865447057
+        },
+        {
+          "key": "tk_ventures",
+          "fanout": 8984,
+          "ratio_pct": 1.1091549730489167
+        },
+        {
+          "key": "tk_india",
+          "fanout": 8528,
+          "ratio_pct": 1.0528577037133975
+        },
+        {
+          "key": "tk_infrastructure",
+          "fanout": 8294,
+          "ratio_pct": 1.0239683155017494
+        },
+        {
+          "key": "tk_construction",
+          "fanout": 8195,
+          "ratio_pct": 1.0117458820275906
+        },
+        {
+          "key": "tk_producer",
+          "fanout": 8008,
+          "ratio_pct": 0.9886590632430683
+        },
+        {
+          "key": "tk_properties",
+          "fanout": 7975,
+          "ratio_pct": 0.9845849187516822
+        }
+      ],
+      "threshold_stats": [
+        {
+          "threshold": 15,
+          "raw_keys_ge_th": 45529,
+          "raw_pct_ge_th": 1.0858710830686966,
+          "filter_pruned_ge_th": 40437,
+          "filter_pct_ge_th": 0.964426387270726,
+          "postings_reduction_ge_th": 28.55789147703017,
+          "filter_pruned_gt_th": 37498,
+          "filter_pct_gt_th": 0.8943309511061079
+        },
+        {
+          "threshold": 25,
+          "raw_keys_ge_th": 27050,
+          "raw_pct_ge_th": 0.6451451338050087,
+          "filter_pruned_ge_th": 22690,
+          "filter_pct_ge_th": 0.5411587092804306,
+          "postings_reduction_ge_th": 24.66374203537371,
+          "filter_pruned_gt_th": 21719,
+          "filter_pct_gt_th": 0.5180002647360807
+        },
+        {
+          "threshold": 50,
+          "raw_keys_ge_th": 11004,
+          "raw_pct_ge_th": 0.2624464714377196,
+          "filter_pruned_ge_th": 10984,
+          "filter_pct_ge_th": 0.26196946949035915,
+          "postings_reduction_ge_th": 19.97583274187315,
+          "filter_pruned_gt_th": 10739,
+          "filter_pct_gt_th": 0.2561261956351937
+        },
+        {
+          "threshold": 75,
+          "raw_keys_ge_th": 5231,
+          "raw_pct_ge_th": 0.12475985933212573,
+          "filter_pruned_ge_th": 5227,
+          "filter_pct_ge_th": 0.12466445894265363,
+          "postings_reduction_ge_th": 15.72403056554385,
+          "filter_pruned_gt_th": 5031,
+          "filter_pct_gt_th": 0.11998983985852121
+        },
+        {
+          "threshold": 100,
+          "raw_keys_ge_th": 2732,
+          "raw_pct_ge_th": 0.06515846600943749,
+          "filter_pruned_ge_th": 2732,
+          "filter_pct_ge_th": 0.06515846600943749,
+          "postings_reduction_ge_th": 13.271775787772388,
+          "filter_pruned_gt_th": 2692,
+          "filter_pct_gt_th": 0.06420446211471659
+        },
+        {
+          "threshold": 150,
+          "raw_keys_ge_th": 1608,
+          "raw_pct_ge_th": 0.03835095656778019,
+          "filter_pruned_ge_th": 1608,
+          "filter_pct_ge_th": 0.03835095656778019,
+          "postings_reduction_ge_th": 11.680463334568833,
+          "filter_pruned_gt_th": 1592,
+          "filter_pct_gt_th": 0.03796935500989183
+        },
+        {
+          "threshold": 200,
+          "raw_keys_ge_th": 1130,
+          "raw_pct_ge_th": 0.026950610025865435,
+          "filter_pruned_ge_th": 1130,
+          "filter_pct_ge_th": 0.026950610025865435,
+          "postings_reduction_ge_th": 10.713253131056511,
+          "filter_pruned_gt_th": 1122,
+          "filter_pct_gt_th": 0.02675980924692125
+        },
+        {
+          "threshold": 300,
+          "raw_keys_ge_th": 687,
+          "raw_pct_ge_th": 0.01638501689183146,
+          "filter_pruned_ge_th": 687,
+          "filter_pct_ge_th": 0.01638501689183146,
+          "postings_reduction_ge_th": 9.445186912249364,
+          "filter_pruned_gt_th": 682,
+          "filter_pct_gt_th": 0.016265766404991347
+        },
+        {
+          "threshold": 500,
+          "raw_keys_ge_th": 389,
+          "raw_pct_ge_th": 0.009277687876160755,
+          "filter_pruned_ge_th": 389,
+          "filter_pct_ge_th": 0.009277687876160755,
+          "postings_reduction_ge_th": 8.09460180679025,
+          "filter_pruned_gt_th": 389,
+          "filter_pct_gt_th": 0.009277687876160755
+        }
+      ]
+    }
+  }
+}

@@ -51,3 +51,16 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# Submission outputs and candidate pairs (large generated TSVs)
+output/
+matching_results*.tsv
+candidate_pairs.tsv
+
+# Scratch directory and serialized caches
+scratch/
+*.pkl
+
+# Logs and temporary files
+*.log
+*.tmp

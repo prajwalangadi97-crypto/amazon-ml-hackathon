@@ -1,0 +1,19 @@
+=========================================================================================================
+EXP-002B: HIGH-FREQUENCY BLOCKING KEY OPTIMIZATION BENCHMARK REPORT
+=========================================================================================================
+Validation Entities     : 2,001 Source 1 entities
+Search Pool Size        : 10,320,219 records (Source 2 + Source 3)
+Total Ground Truth      : 6,945 true links
+Filter Configuration    : max_key_fanout=15, preserve_exact_name=True, preserve_pin_keys=True
+Pruned Keys             : 5 keys, 85 postings removed
+
+BENCHMARK METRICS:
+  Pair Recall           : 92.20% (6,403 / 6,945)
+    Source 2 Recall     : 91.79% (3,062 / 3,336)
+    Source 3 Recall     : 92.57% (3,341 / 3,609)
+  Candidate Count       : 3,345,467
+  Avg Candidates / S1   : 1671.90 (Median: 2400, P95: 2400, Max: 2,400)
+  Runtime               : 657.16s
+  Peak RAM              : 629.96 MB
+  Recall Change vs Base : +0.23% (versus 91.97% baseline)
+=========================================================================================================

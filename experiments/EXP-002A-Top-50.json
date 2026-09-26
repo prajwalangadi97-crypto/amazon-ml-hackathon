@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-002A-Top-50",
+  "hypothesis": "Evaluate candidate compression policy Top-50 Candidates by Cheap Score using cheap pairwise score.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full search pool (10,320,219 records).",
+  "blocking_method": "D + E-A + E-C with RapidFuzz Candidate Compression",
+  "features": [
+    "cheap_pairwise_rapidfuzz_score"
+  ],
+  "model": "RapidFuzz Deterministic Adaptive Compression",
+  "hyperparameters": {
+    "policy_id": "Top-50",
+    "method": "top_k"
+  },
+  "validation_method": "Candidate Pair Recall & Compression Ratio",
+  "macro_F0_5": 0.8621576116703553,
+  "precision": 0.06515884189263635,
+  "recall": 0.8594672426205904,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 395.52271819114685,
+  "notes": "Total cands: 98,022, Avg: 49.0, Med: 50, P95: 50, Max: 50, Removed: 99.53%",
+  "conclusion": "Pair recall: 85.95%, S2: 85.94%, S3: 85.95%, Recall Lost: 6.02%, Compression: 99.53%.",
+  "next_experiment": "EXP-002B",
+  "timestamp": "2026-09-25T17:44:52.381754+00:00",
+  "extra_metrics": {
+    "policy_id": "Top-50",
+    "policy_name": "Top-50 Candidates by Cheap Score",
+    "method": "top_k",
+    "pair_recall": 0.8594672426205904,
+    "macro_candidate_recall": 0.8621576116703553,
+    "s2_recall": 0.8594124700239808,
+    "s3_recall": 0.8595178719866999,
+    "total_candidates": 98022,
+    "avg_candidates_per_s1": 48.98650674662669,
+    "median_candidates_per_s1": 50,
+    "p95_candidates_per_s1": 50,
+    "max_candidates_per_s1": 50,
+    "zero_candidate_entities": 0,
+    "perfect_recall_entities": 1422,
+    "missed_entities": 579,
+    "broad_candidate_count": 20738149,
+    "compressed_candidate_count": 98022,
+    "compression_ratio": 0.9952733486484256,
+    "pct_candidates_removed": 99.52733486484256,
+    "recall_lost_relative_to_broad": 6.018718502519793,
+    "runtime_seconds": 0.18703603744506836
+  }
+}

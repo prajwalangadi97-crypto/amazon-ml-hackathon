@@ -1,0 +1,244 @@
+{
+  "experiment_id": "EXP-004A",
+  "audit_title": "Read-Only Retrieval Metadata Architecture Audit",
+  "timestamp": "2026-09-26T13:20:00Z",
+  "project_root": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)",
+  "active_pipeline_reference": {
+    "production_script": "tools/generate_final_submission.py",
+    "validation_script": "tools/evaluate_specificity_cap100_xgb.py",
+    "blocking_normalizers": "src/blocking/normalizers.py",
+    "recovery_keys": "tools/run_recovery_experiments.py",
+    "feature_extractor": "src/matching/candidate_compression.py"
+  },
+  "retrieval_channels_audit": [
+    {
+      "channel_id": "CH1_EXACT_NAME",
+      "name": "Exact Normalized Name",
+      "prefix": "en_",
+      "implementation_source": {
+        "index_creation": "tools/generate_final_submission.py:201-204",
+        "query_matching": "tools/generate_final_submission.py:254-260",
+        "normalizer": "src/blocking/normalizers.py:normalize_name_conservative (lines 37-55)"
+      },
+      "priority_tier": 1,
+      "fanout_policy": "Unconditional preservation (preserve_exact_name=True)",
+      "status": "ACTIVE_IN_V2",
+      "metadata_extracted": "Tier 1 assigned to tid_to_tier, but discarded before feature extraction"
+    },
+    {
+      "channel_id": "CH2_PIN_ADDRESS",
+      "name": "PIN / Postal Code Composite Address",
+      "prefix": "ak_pin_ and pin_",
+      "implementation_source": {
+        "index_creation": "tools/generate_final_submission.py:212-215",
+        "query_matching": "tools/generate_final_submission.py:264-270, 278-280",
+        "normalizers": [
+          "src/blocking/normalizers.py:extract_address_keys (lines 109-148)",
+          "tools/run_recovery_experiments.py:extract_h1_relaxed_address_keys (lines 35-65)"
+        ]
+      },
+      "priority_tier": 2,
+      "fanout_policy": "Unconditional preservation for 5-6 digit PINs",
+      "status": "ACTIVE_IN_V2",
+      "metadata_extracted": "Tier 2 assigned to tid_to_tier, but discarded before feature extraction"
+    },
+    {
+      "channel_id": "CH3_NUM_STREET_ADDRESS",
+      "name": "House Number + Street Word Composite",
+      "prefix": "ak_num_ and nword_",
+      "implementation_source": {
+        "index_creation": "tools/generate_final_submission.py:212-215",
+        "query_matching": "tools/generate_final_submission.py:271-276, 281-286",
+        "normalizers": [
+          "src/blocking/normalizers.py:extract_address_keys",
+          "tools/run_recovery_experiments.py:extract_h1_relaxed_address_keys"
+        ]
+      },
+      "priority_tier": 3,
+      "fanout_policy": "Pruned if postings > 15",
+      "status": "ACTIVE_IN_V2",
+      "metadata_extracted": "Tier 3 assigned to tid_to_tier, but discarded before feature extraction"
+    },
+    {
+      "channel_id": "CH4_LOCALITY_NAME_LOCALITY",
+      "name": "Locality Word Pairs & Name-Locality Cross-Field",
+      "prefix": "ak_loc_, loc_, and nl_",
+      "implementation_source": {
+        "index_creation": "tools/generate_final_submission.py:212-217",
+        "query_matching": "tools/generate_final_submission.py:283-299",
+        "normalizers": [
+          "src/blocking/normalizers.py:extract_address_keys",
+          "tools/run_recovery_experiments.py:extract_h1_relaxed_address_keys",
+          "tools/run_recovery_experiments.py:extract_h3_name_locality_keys (lines 95-125)"
+        ]
+      },
+      "priority_tier": 4,
+      "fanout_policy": "Pruned if postings > 15",
+      "status": "ACTIVE_IN_V2",
+      "metadata_extracted": "Tier 4 assigned to tid_to_tier, but discarded before feature extraction"
+    },
+    {
+      "channel_id": "CH5_TOKEN_NAME_KEYS",
+      "name": "Informative Token Pairs & Salient Tokens",
+      "prefix": "tk_",
+      "implementation_source": {
+        "index_creation": "tools/generate_final_submission.py:206-209",
+        "query_matching": "tools/generate_final_submission.py:301-307",
+        "normalizer": "src/blocking/normalizers.py:extract_token_blocking_keys (lines 76-107)"
+      },
+      "priority_tier": 5,
+      "fanout_policy": "Pruned if postings > 5",
+      "status": "ACTIVE_IN_V2",
+      "metadata_extracted": "Tier 5 assigned to tid_to_tier, but discarded before feature extraction"
+    },
+    {
+      "channel_id": "CH6_DOMAIN_HANDLE",
+      "name": "Domain / Website Handle Extraction",
+      "prefix": "None (unindexed in production)",
+      "implementation_source": {
+        "exploration_script": "tools/run_recovery_experiments.py:clean_domain_or_handle (lines 68-92)"
+      },
+      "priority_tier": null,
+      "fanout_policy": "Not active in production index",
+      "status": "NOT_IN_PRODUCTION_INDEX",
+      "metadata_extracted": "None"
+    }
+  ],
+  "candidate_metadata_signals_audit": [
+    {
+      "signal_name": "channel_agreement_count",
+      "description": "Number of distinct retrieval channels (1 to 5) that independently produced the candidate",
+      "exact_source_in_code": "tools/generate_final_submission.py:252-307 (tid_to_tier dictionary)",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Negligible: 1 integer (1 byte) per candidate in memory during candidate selection",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "B_INSTRUMENTATION_REQUIRED"
+    },
+    {
+      "signal_name": "retrieval_priority_tier",
+      "description": "Best priority tier (1: Exact Name, 2: PIN, 3: Address, 4: Locality/Cross-Field, 5: Token)",
+      "exact_source_in_code": "tools/generate_final_submission.py:252 (tid_to_tier[tid])",
+      "already_exists": true,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Zero: already computed, currently discarded in line 316",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "A_ALREADY_AVAILABLE_AT_QUERY_TIME"
+    },
+    {
+      "signal_name": "retrieval_rank_within_s1",
+      "description": "1-based integer rank of candidate within S1 candidate list (sorted by priority tier and cheap score)",
+      "exact_source_in_code": "tools/generate_final_submission.py:315-316 (sorted_items slice)",
+      "already_exists": true,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Zero: 1 integer per candidate",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "A_ALREADY_AVAILABLE_AT_QUERY_TIME"
+    },
+    {
+      "signal_name": "reciprocal_retrieval_rank",
+      "description": "1.0 / (retrieval_rank_within_s1 + 1)",
+      "exact_source_in_code": "tools/generate_final_submission.py:316 (computed trivially from rank)",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Negligible: 1 float32 (4 bytes) per candidate",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "A_ALREADY_AVAILABLE_AT_QUERY_TIME"
+    },
+    {
+      "signal_name": "s1_candidate_pool_size",
+      "description": "Total number of candidates retrieved for this S1 before scoring (0 to final_cap)",
+      "exact_source_in_code": "tools/generate_final_submission.py:312 (len(tid_to_tier))",
+      "already_exists": true,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Zero: len(country_candidates[sid])",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "A_ALREADY_AVAILABLE_AT_QUERY_TIME"
+    },
+    {
+      "signal_name": "min_activating_key_fanout",
+      "description": "Smallest posting count of the keys that retrieved this candidate (measure of key specificity in target pool)",
+      "exact_source_in_code": "tools/generate_final_submission.py:228-237 (len(clean_idx[k]))",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Very Low: 1 integer per candidate pair recorded during clean_idx lookup",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "B_INSTRUMENTATION_REQUIRED"
+    },
+    {
+      "signal_name": "channel_binary_indicators",
+      "description": "5 boolean flags: is_exact_name_hit, is_pin_hit, is_address_hit, is_locality_hit, is_token_hit",
+      "exact_source_in_code": "tools/generate_final_submission.py:254-307",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": true,
+      "computational_storage_cost": "Very Low: 5 bits / boolean flags per candidate pair",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "B_INSTRUMENTATION_REQUIRED"
+    },
+    {
+      "signal_name": "domain_website_hit",
+      "description": "Boolean flag indicating whether candidate was retrieved via domain/website normalization",
+      "exact_source_in_code": "tools/run_recovery_experiments.py:clean_domain_or_handle",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": false,
+      "computational_storage_cost": "Requires indexing domain handles during target index construction",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": true,
+      "category": "C_REQUIRES_CHANGING_CANDIDATE_GENERATION"
+    },
+    {
+      "signal_name": "reverse_target_s1_rank",
+      "description": "Reciprocal kNN rank of S1 when Target queries an S1 index",
+      "exact_source_in_code": "None in active pipeline (retrieval is one-way)",
+      "already_exists": false,
+      "can_be_added_without_changing_candidates": false,
+      "computational_storage_cost": "High: requires building dual index (Target->S1) and querying both directions",
+      "safe_under_competition_rules": true,
+      "supported_on_16gb_laptop": false,
+      "category": "C_REQUIRES_CHANGING_CANDIDATE_GENERATION"
+    }
+  ],
+  "category_classification": {
+    "category_A_already_available_at_query_time": [
+      "retrieval_priority_tier (1 to 5)",
+      "retrieval_rank_within_s1 (1 to final_cap)",
+      "reciprocal_retrieval_rank (1.0 / (rank + 1))",
+      "s1_candidate_pool_size (0 to final_cap)"
+    ],
+    "category_B_instrumentation_of_existing_retrieval": [
+      "channel_agreement_count (count of independent channels matching the pair: 1 to 5)",
+      "channel_binary_indicators (5 binary flags for CH1-CH5)",
+      "min_activating_key_fanout (smallest posting list length among activating keys)"
+    ],
+    "category_C_requires_changing_candidate_generation": [
+      "domain_website_hit (requires modifying target index to index URLs/domains)",
+      "reverse_target_s1_rank (requires bidirectional candidate index construction)",
+      "character_ngram_tfidf_similarity (requires building sparse char n-gram vectorizer)"
+    ],
+    "category_D_prohibited_by_competition_rules": [
+      "external_registry_lookups (Google Places, OpenStreetMap, Yelp)",
+      "external_postal_geocoding_databases",
+      "pretrained_external_entity_embeddings"
+    ]
+  },
+  "audit_findings_summary": {
+    "total_channels_in_active_v2": 5,
+    "channels_currently_passed_to_xgboost": 0,
+    "candidate_pool_impact": "Zero candidate set drift. Category A and B features require 0 modifications to candidate pairs.",
+    "runtime_impact": "< 1% increase in candidate generation runtime; feature matrix expands from 22 to 26 features."
+  },
+  "recommended_next_experiment": {
+    "experiment_id": "EXP-004B",
+    "title": "Pass-Through Retrieval Metadata Feature Enrichment (Zero Candidate Set Change)",
+    "description": "Instrument tools/generate_final_submission.py and src/matching/candidate_compression.py to preserve (1) channel_agreement_count, (2) retrieval_priority_tier, (3) reciprocal_retrieval_rank, and (4) s1_candidate_pool_size during candidate generation. Train XGBoost on training split and validate on the 2,001 entity validation benchmark without modifying candidate pairs.",
+    "expected_value": "+0.5% to +1.2% Macro F0.5 via improved tree splits on multi-channel corroborated pairs",
+    "implementation_risk": "Zero risk: candidate set is identical, feature extraction runtime overhead is negligible."
+  }
+}

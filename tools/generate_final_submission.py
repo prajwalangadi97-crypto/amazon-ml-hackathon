@@ -44,12 +44,17 @@ from src.matching.candidate_compression import (
     preprocess_record,
     PreprocessedRecord,
 )
+from src.matching.decision_layer import (
+    DEFAULT_V3_DECISION_CONFIG,
+    DecisionLayerConfig,
+    filter_entity_candidates,
+)
 from tools.run_recovery_experiments import (
     extract_h1_relaxed_address_keys,
     extract_h3_name_locality_keys,
 )
 
-FEATURE_NAMES = [
+BASE_FEATURE_NAMES = [
     "country_eq", "source_type", "s1_name_empty", "target_name_empty",
     "s1_addr_empty", "target_addr_empty", "name_exact_eq", "name_fuzz_ratio",
     "name_fuzz_wratio", "name_token_set_ratio", "name_token_sort_ratio",
@@ -58,6 +63,15 @@ FEATURE_NAMES = [
     "house_number_agreement", "postal_pin_overlap", "addr_len_diff",
     "cross_field_name_loc", "cheap_candidate_score",
 ]
+
+METADATA_FEATURE_NAMES = [
+    "channel_agreement_count",
+    "retrieval_priority_tier",
+    "reciprocal_retrieval_rank",
+    "s1_candidate_pool_size",
+]
+
+FEATURE_NAMES = BASE_FEATURE_NAMES + METADATA_FEATURE_NAMES
 
 
 def get_peak_ram_mb() -> float:
@@ -104,12 +118,18 @@ def get_peak_ram_mb() -> float:
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--test-dir", type=Path, default=Path("dataset/test"))
-    parser.add_argument("--model-path", type=Path, default=Path("artifacts/xgb_matcher_exp002b.json"))
-    parser.add_argument("--threshold", type=float, default=0.60)
+    parser.add_argument("--model-path", type=Path, default=Path("artifacts/xgb_matcher_exp004b.json"))
+    parser.add_argument("--threshold", type=float, default=0.60, help="Default fallback threshold")
+    parser.add_argument("--france-threshold", type=float, default=0.45)
+    parser.add_argument("--us-threshold", type=float, default=0.65)
+    parser.add_argument("--india-threshold", type=float, default=0.55)
+    parser.add_argument("--margin-delta", type=float, default=0.30)
     parser.add_argument("--final-cap", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=50000)
+    parser.add_argument("--checkpoint-dir", type=Path, default=Path("output/checkpoints"))
     parser.add_argument("--output-matching", type=Path, default=Path("output/matching_results.tsv"))
     parser.add_argument("--output-candidate", type=Path, default=Path("output/candidate_pairs.tsv"))
+    parser.add_argument("--limit-s1-per-country", type=int, default=None, help="Optional S1 limit per country for smoke testing")
     parser.add_argument("--num-threads", type=int, default=8)
     args = parser.parse_args()
 
@@ -153,11 +173,32 @@ def main():
     for c, records in sorted(country_s1_records.items(), key=lambda x: len(x[1])):
         print(f"  {c:<15}: {len(records):,} entities", flush=True)
 
+    # Optional S1 limit per country (e.g. for smoke testing)
+    if args.limit_s1_per_country:
+        for c in country_s1_records:
+            country_s1_records[c] = country_s1_records[c][: args.limit_s1_per_country]
+        allowed_sids = {sid for recs in country_s1_records.values() for sid, _, _, _ in recs}
+        test_s1_order = [sid for sid in test_s1_order if sid in allowed_sids]
+        total_test_s1 = len(test_s1_order)
+        print(f"Applied --limit-s1-per-country={args.limit_s1_per_country} -> Active test S1: {total_test_s1:,} entities.", flush=True)
+
     # Output directory & checkpoint setup
-    checkpoint_dir = PROJECT_ROOT / "output" / "checkpoints"
+    checkpoint_dir = args.checkpoint_dir
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     args.output_matching.parent.mkdir(parents=True, exist_ok=True)
     args.output_candidate.parent.mkdir(parents=True, exist_ok=True)
+
+    decision_config = DecisionLayerConfig(
+        country_thresholds={
+            "France": args.france_threshold,
+            "US": args.us_threshold,
+            "India": args.india_threshold,
+        },
+        margin_delta=args.margin_delta,
+        default_threshold=args.threshold,
+        enforce_group_margin=True,
+    )
+    print(f"Decision Layer Config: FR={args.france_threshold:.2f}, US={args.us_threshold:.2f}, IN={args.india_threshold:.2f}, Margin={args.margin_delta:.2f}", flush=True)
 
     total_candidate_pairs_all = 0
     total_predicted_matches_all = 0
@@ -244,12 +285,14 @@ def main():
         print(f"[{country}] Generating candidates for {len(s1_list):,} S1 entities...", flush=True)
         t0_query = time.time()
         country_candidates: Dict[str, List[str]] = {}
+        country_candidates_meta: Dict[str, Dict[str, Dict[str, float]]] = {}
         needed_target_ids: Set[str] = set()
         cands_count = 0
 
         for sid, name, addr, _ in s1_list:
             prep = country_s1_prep[sid]
             tid_to_tier: Dict[str, int] = {}
+            tid_to_channels: Dict[str, Set[int]] = collections.defaultdict(set)
 
             # Tier 1: exact name
             en = prep.name_norm
@@ -258,6 +301,7 @@ def main():
                 if m:
                     for tid in m:
                         tid_to_tier[tid] = 1
+                        tid_to_channels[tid].add(1)
 
             # Tier 2 & 3 & 4: address keys
             if prep.raw_address and prep.raw_address.strip():
@@ -268,27 +312,34 @@ def main():
                             for tid in m:
                                 if tid not in tid_to_tier or tid_to_tier[tid] > 2:
                                     tid_to_tier[tid] = 2
+                                tid_to_channels[tid].add(2)
                     else:
                         m = clean_idx.get(f"ak_{ak}")
                         if m:
                             for tid in m:
                                 if tid not in tid_to_tier or tid_to_tier[tid] > 3:
                                     tid_to_tier[tid] = 3
+                                tid_to_channels[tid].add(3)
 
                 for ak in extract_h1_relaxed_address_keys(prep.raw_address):
                     if ak.startswith("pin_"):
                         tier = 2
+                        ch = 2
                     elif ak.startswith("nword_"):
                         tier = 3
+                        ch = 3
                     elif ak.startswith("loc_"):
                         tier = 4
+                        ch = 4
                     else:
                         tier = 3
+                        ch = 3
                     m = clean_idx.get(ak)
                     if m:
                         for tid in m:
                             if tid not in tid_to_tier or tid_to_tier[tid] > tier:
                                 tid_to_tier[tid] = tier
+                            tid_to_channels[tid].add(ch)
 
                 for ck in extract_h3_name_locality_keys(prep.raw_name, prep.raw_address):
                     m = clean_idx.get(ck)
@@ -296,6 +347,7 @@ def main():
                         for tid in m:
                             if tid not in tid_to_tier or tid_to_tier[tid] > 4:
                                 tid_to_tier[tid] = 4
+                            tid_to_channels[tid].add(4)
 
             # Tier 5: rare token keys
             for tk in extract_token_blocking_keys(prep.raw_name):
@@ -304,9 +356,11 @@ def main():
                     for tid in m:
                         if tid not in tid_to_tier:
                             tid_to_tier[tid] = 5
+                        tid_to_channels[tid].add(5)
 
             if not tid_to_tier:
                 country_candidates[sid] = []
+                country_candidates_meta[sid] = {}
                 continue
 
             if len(tid_to_tier) <= args.final_cap:
@@ -318,6 +372,17 @@ def main():
             country_candidates[sid] = selected_tids
             needed_target_ids.update(selected_tids)
             cands_count += len(selected_tids)
+
+            pool_size = float(len(selected_tids))
+            s1_meta: Dict[str, Dict[str, float]] = {}
+            for rank_idx, tid in enumerate(selected_tids):
+                s1_meta[tid] = {
+                    "channel_agreement_count": float(len(tid_to_channels[tid])),
+                    "retrieval_priority_tier": float(tid_to_tier[tid]),
+                    "reciprocal_retrieval_rank": 1.0 / (rank_idx + 1.0),
+                    "s1_candidate_pool_size": pool_size,
+                }
+            country_candidates_meta[sid] = s1_meta
 
         del clean_idx
         gc.collect()
@@ -356,8 +421,9 @@ def main():
         tgt_time = time.time() - t0_tgt
         print(f"[{country}] Retrieved {len(target_prep_map):,} target records in {tgt_time:.2f}s. RAM: {get_peak_ram_mb():.2f} MB.", flush=True)
 
-        # 3F: Pairwise Feature Extraction & XGBoost Batch Scoring
-        print(f"[{country}] Scoring {cands_count:,} candidate pairs with XGBoost at theta={args.threshold:.2f}...", flush=True)
+        # 3F: Pairwise Feature Extraction & XGBoost Batch Scoring with Decision Layer
+        c_thresh = decision_config.get_threshold(country)
+        print(f"[{country}] Scoring {cands_count:,} candidate pairs with XGBoost (threshold={c_thresh:.2f}, margin={args.margin_delta:.2f})...", flush=True)
         t0_score = time.time()
 
         country_matches: Dict[str, List[str]] = collections.defaultdict(list)
@@ -365,39 +431,55 @@ def main():
 
         batch_X = []
         batch_pairs = []
+        batch_s1_offsets: List[Tuple[str, int, int]] = []
 
         for sid, _, _, _ in s1_list:
             tids = country_candidates.get(sid, [])
             if not tids:
                 continue
             s1_prep = country_s1_prep[sid]
+            s1_meta_dict = country_candidates_meta.get(sid, {})
+
+            start_idx = len(batch_X)
             for tid in tids:
                 tgt_prep = target_prep_map.get(tid)
                 if tgt_prep:
                     feats = extract_features_from_preprocessed(s1_prep, tgt_prep)
                     feats["cheap_candidate_score"] = compute_cheap_candidate_score(feats)
+                    feats.update(s1_meta_dict[tid])
                     batch_X.append([feats[col] for col in FEATURE_NAMES])
                     batch_pairs.append((sid, tid))
+            end_idx = len(batch_X)
+            if end_idx > start_idx:
+                batch_s1_offsets.append((sid, start_idx, end_idx))
 
-                    if len(batch_X) >= args.batch_size:
-                        dmat = xgb.DMatrix(np.array(batch_X, dtype=np.float32), feature_names=FEATURE_NAMES)
-                        probs = bst.predict(dmat)
-                        for (s_id, t_id), prob in zip(batch_pairs, probs):
-                            if prob >= args.threshold:
-                                country_matches[s_id].append(t_id)
-                                country_pred_matches += 1
-                        batch_X = []
-                        batch_pairs = []
+            if len(batch_X) >= args.batch_size:
+                dmat = xgb.DMatrix(np.array(batch_X, dtype=np.float32), feature_names=FEATURE_NAMES)
+                probs = bst.predict(dmat)
+                for sid_item, s_start, s_end in batch_s1_offsets:
+                    cand_probs = [(batch_pairs[idx][1], float(probs[idx])) for idx in range(s_start, s_end)]
+                    matched_tids = filter_entity_candidates(cand_probs, country=country, config=decision_config)
+                    if matched_tids:
+                        country_matches[sid_item] = matched_tids
+                        country_pred_matches += len(matched_tids)
+                batch_X = []
+                batch_pairs = []
+                batch_s1_offsets = []
 
         if batch_X:
             dmat = xgb.DMatrix(np.array(batch_X, dtype=np.float32), feature_names=FEATURE_NAMES)
             probs = bst.predict(dmat)
-            for (s_id, t_id), prob in zip(batch_pairs, probs):
-                if prob >= args.threshold:
-                    country_matches[s_id].append(t_id)
-                    country_pred_matches += 1
+            for sid_item, s_start, s_end in batch_s1_offsets:
+                cand_probs = [(batch_pairs[idx][1], float(probs[idx])) for idx in range(s_start, s_end)]
+                matched_tids = filter_entity_candidates(cand_probs, country=country, config=decision_config)
+                if matched_tids:
+                    country_matches[sid_item] = matched_tids
+                    country_pred_matches += len(matched_tids)
+            batch_X = []
+            batch_pairs = []
+            batch_s1_offsets = []
 
-        del country_s1_prep, target_prep_map, batch_X, batch_pairs
+        del country_s1_prep, target_prep_map, batch_X, batch_pairs, batch_s1_offsets, country_candidates_meta
         gc.collect()
 
         score_time = time.time() - t0_score
@@ -510,20 +592,25 @@ def main():
     print(f"[CHECK 1 PASSED] Every Source 1 entity has exactly one row: {total_test_s1:,} rows.", flush=True)
 
     # Check 2: Run official utils/validate_submission.py
-    cmd = [
-        sys.executable,
-        str(PROJECT_ROOT / "utils" / "validate_submission.py"),
-        "--matching", str(args.output_matching),
-        "--candidate", str(args.output_candidate),
-        "--test-dir", str(args.test_dir),
-    ]
-    print(f"\nRunning official submission validator:\n{' '.join(cmd)}", flush=True)
-    val_proc = subprocess.run(cmd, capture_output=True, text=True, cwd=str(PROJECT_ROOT))
-    print(val_proc.stdout, flush=True)
-    if val_proc.stderr:
-        print("Validator STDERR:", val_proc.stderr, flush=True)
-    assert val_proc.returncode == 0, f"Validator failed with exit code {val_proc.returncode}!"
-    print("[CHECK 2 PASSED] utils/validate_submission.py returned exit code 0 (VALID SUBMISSION!).", flush=True)
+    if not args.limit_s1_per_country:
+        cmd = [
+            sys.executable,
+            str(PROJECT_ROOT / "utils" / "validate_submission.py"),
+            "--matching", str(args.output_matching),
+            "--candidate", str(args.output_candidate),
+            "--test-dir", str(args.test_dir),
+        ]
+        print(f"\nRunning official submission validator:\n{' '.join(cmd)}", flush=True)
+        val_proc = subprocess.run(cmd, capture_output=True, text=True, cwd=str(PROJECT_ROOT))
+        print(val_proc.stdout, flush=True)
+        if val_proc.stderr:
+            print("Validator STDERR:", val_proc.stderr, flush=True)
+        assert val_proc.returncode == 0, f"Validator failed with exit code {val_proc.returncode}!"
+        print("[CHECK 2 PASSED] utils/validate_submission.py returned exit code 0 (VALID SUBMISSION!).", flush=True)
+        val_exit_code = val_proc.returncode
+    else:
+        print("[CHECK 2 SKIPPED for partial test run, full validator requires all entities in test_dir]", flush=True)
+        val_exit_code = 0
 
     total_time = time.time() - overall_start
     peak_ram = get_peak_ram_mb()
@@ -542,10 +629,11 @@ def main():
         "every_source1_exact_one_row": (matching_rows_written == total_test_s1),
         "total_runtime_seconds": total_time,
         "peak_ram_mb": peak_ram,
-        "validator_exit_code": val_proc.returncode,
-        "ready_for_upload": True,
+        "validator_exit_code": val_exit_code,
+        "ready_for_upload": (val_exit_code == 0 and not args.limit_s1_per_country),
     }
-    with open("output/submission_summary.json", "w", encoding="utf-8") as f:
+    summary_path = args.output_matching.parent / "submission_summary.json"
+    with open(summary_path, "w", encoding="utf-8") as f:
         json.dump(summary_data, f, indent=2)
 
     print("\n" + "=" * 95, flush=True)

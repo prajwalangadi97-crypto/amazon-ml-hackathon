@@ -1,0 +1,61 @@
+{
+  "report_id": "V3-production-report",
+  "description": "Amazon ML Challenge 2026 V3 Full Production Test Inference",
+  "start_timestamp": "2026-09-26T13:59:10Z",
+  "end_timestamp": "2026-09-26T15:00:41Z",
+  "total_wall_clock_seconds": 3691.025088071823,
+  "total_wall_clock_minutes": 61.51708480119705,
+  "status": "V3 PRODUCTION READY FOR SUBMISSION",
+  "configuration": {
+    "model_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\artifacts\\xgb_matcher_exp004b.json",
+    "feature_count": 26,
+    "decision_layer": {
+      "france_threshold": 0.45,
+      "us_threshold": 0.65,
+      "india_threshold": 0.55,
+      "margin_delta": 0.3,
+      "default_threshold": 0.6
+    },
+    "candidate_cap": 100,
+    "batch_size": 50000
+  },
+  "submission_statistics": {
+    "total_source1_entities": 1732544,
+    "matching_rows_written": 1732544,
+    "candidate_rows_written": 1732544,
+    "total_candidate_pairs": 27774044,
+    "avg_candidates_per_s1": 16.030787096893356,
+    "country_candidate_pairs": {
+      "France": 4179899,
+      "Us": 11793087,
+      "India": 11801058
+    },
+    "total_predicted_links": 5057818,
+    "empty_matches_singletons": 126495,
+    "empty_candidates_singletons": 8618
+  },
+  "verification_results": {
+    "row_count_passed": true,
+    "entity_order_preserved": true,
+    "duplicate_matched_id_violations": 0,
+    "duplicate_candidate_id_violations": 0,
+    "invalid_predicted_target_ids": 0,
+    "candidate_subset_violations": 0,
+    "all_three_countries_processed": true,
+    "validator_exit_code": 0,
+    "pytest_exit_code": 0
+  },
+  "output_files": {
+    "matching_results_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\v3\\matching_results.tsv",
+    "matching_results_bytes": 87647556,
+    "candidate_pairs_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\v3\\candidate_pairs.tsv",
+    "candidate_pairs_bytes": 380316030
+  },
+  "preserved_v2_artifacts": [
+    "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\artifacts\\xgb_matcher_exp002b.json",
+    "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\artifacts\\xgb_matcher_exp004b.json",
+    "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\matching_results.tsv",
+    "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\matching_results_V2.tsv",
+    "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\candidate_pairs.tsv"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "experiment_id": "EXP-010-PRODUCTION",
+  "model_architecture": "52-Feature XGBoost Matcher (EXP-009)",
+  "model_artifact": "artifacts\\xgb_matcher_exp009.json",
+  "validation_metrics": {
+    "macro_f0_5": 0.872996,
+    "precision": 0.927627,
+    "recall": 0.774103,
+    "tp": 5339,
+    "fp": 209,
+    "singleton_accuracy": 0.794643
+  },
+  "production_stats": {
+    "total_s1": 1732544,
+    "total_candidate_pairs": 33775524,
+    "avg_candidates_per_s1": 19.49475684311625,
+    "total_predicted_links": 5398662,
+    "total_empty_matches": 115024,
+    "total_matched_s1": 1617520,
+    "by_country": {
+      "France": {
+        "s1_count": 259452,
+        "candidates_count": 4179872,
+        "avg_candidates_per_s1": 16.110386506945407,
+        "matched_entities": 248566,
+        "empty_matches": 10886,
+        "predicted_links": 1049994,
+        "runtime_sec": 607.1973724365234
+      },
+      "US": {
+        "s1_count": 663106,
+        "candidates_count": 11828958,
+        "avg_candidates_per_s1": 17.838713569172953,
+        "matched_entities": 628305,
+        "empty_matches": 34801,
+        "predicted_links": 2119712,
+        "runtime_sec": 1372.223794221878
+      },
+      "India": {
+        "s1_count": 809986,
+        "candidates_count": 17766694,
+        "avg_candidates_per_s1": 21.93456923946834,
+        "matched_entities": 740649,
+        "empty_matches": 69337,
+        "predicted_links": 2228956,
+        "runtime_sec": 4288.697724580765
+      }
+    }
+  },
+  "output_files": {
+    "matching_results": "output\\exp009\\matching_results.tsv",
+    "candidate_pairs": "output\\exp009\\candidate_pairs.tsv",
+    "matching_size_mb": 89.41928768157959,
+    "candidate_size_mb": 438.1093578338623
+  },
+  "total_runtime_seconds": 6405.5924780368805,
+  "peak_ram_mb": 0.0
+}

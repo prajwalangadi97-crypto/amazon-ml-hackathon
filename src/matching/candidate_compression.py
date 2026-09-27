@@ -23,6 +23,7 @@ from src.blocking.normalizers import (
     LEGAL_AND_BUSINESS_STOPWORDS,
     normalize_name_conservative,
 )
+from src.blocking.transliteration import has_indic_script, transliterate_indic_to_latin
 
 
 @dataclass(frozen=True)
@@ -41,6 +42,7 @@ class PreprocessedRecord:
     pin: Optional[str]
     addr_words_set: Set[str]
     is_source2: bool
+    name_translit: str = ""
 
 
 def preprocess_record(
@@ -83,6 +85,11 @@ def preprocess_record(
 
     is_s2 = entity_id.startswith("S2-")
 
+    name_translit = ""
+    if has_indic_script(raw_name):
+        trans = transliterate_indic_to_latin(raw_name)
+        name_translit = normalize_name_conservative(trans.replace("aa", "a").replace("ee", "i").replace("oo", "u"))
+
     return PreprocessedRecord(
         entity_id=entity_id,
         raw_name=raw_name,
@@ -96,6 +103,7 @@ def preprocess_record(
         pin=pin,
         addr_words_set=addr_words_set,
         is_source2=is_s2,
+        name_translit=name_translit,
     )
 
 
@@ -169,6 +177,25 @@ def extract_features_from_preprocessed(
         len1, len2 = len(s1.name_norm), len(tgt.name_norm)
         feats["name_len_diff"] = float(abs(len1 - len2))
         feats["name_len_ratio"] = min(len1, len2) / max(len1, len2, 1)
+
+        # Cross-script alignment: if either record has Indic transliteration, evaluate against transliteration
+        if s1.name_translit or tgt.name_translit:
+            s1_c = s1.name_translit if s1.name_translit else s1.name_norm
+            tgt_c = tgt.name_translit if tgt.name_translit else tgt.name_norm
+            if s1_c and tgt_c:
+                if s1_c == tgt_c:
+                    feats["name_exact_eq"] = 1.0
+                feats["name_fuzz_ratio"] = max(feats["name_fuzz_ratio"], fuzz.ratio(s1_c, tgt_c) / 100.0)
+                feats["name_fuzz_wratio"] = max(feats["name_fuzz_wratio"], fuzz.WRatio(s1_c, tgt_c) / 100.0)
+                feats["name_token_set_ratio"] = max(feats["name_token_set_ratio"], fuzz.token_set_ratio(s1_c, tgt_c) / 100.0)
+                feats["name_token_sort_ratio"] = max(feats["name_token_sort_ratio"], fuzz.token_sort_ratio(s1_c, tgt_c) / 100.0)
+                pfx_t = 0
+                for c1, c2 in zip(s1_c, tgt_c):
+                    if c1 == c2:
+                        pfx_t += 1
+                    else:
+                        break
+                feats["name_prefix_similarity"] = max(feats["name_prefix_similarity"], pfx_t / max(len(s1_c), len(tgt_c), 1))
 
     # 5. ADDRESS FEATURES
     has_both_addrs = bool(s1.addr_norm and tgt.addr_norm)
@@ -355,6 +382,21 @@ def fast_score_candidate(
             else:
                 break
         pfx_sim = pfx_len / max(len(s1.name_norm), len(tgt.name_norm), 1)
+
+        if s1.name_translit or tgt.name_translit:
+            s1_c = s1.name_translit if s1.name_translit else s1.name_norm
+            tgt_c = tgt.name_translit if tgt.name_translit else tgt.name_norm
+            if s1_c and tgt_c:
+                wratio = max(wratio, fuzz.WRatio(s1_c, tgt_c) / 100.0)
+                tset = max(tset, fuzz.token_set_ratio(s1_c, tgt_c) / 100.0)
+                fratio = max(fratio, fuzz.ratio(s1_c, tgt_c) / 100.0)
+                pfx_t = 0
+                for c1, c2 in zip(s1_c, tgt_c):
+                    if c1 == c2:
+                        pfx_t += 1
+                    else:
+                        break
+                pfx_sim = max(pfx_sim, pfx_t / max(len(s1_c), len(tgt_c), 1))
 
         s_name = 0.40 * wratio + 0.30 * tset + 0.20 * fratio + 0.10 * pfx_sim
 

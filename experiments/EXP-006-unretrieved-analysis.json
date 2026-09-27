@@ -1,0 +1,92 @@
+{
+  "experiment_id": "EXP-006",
+  "title": "Unretrieved Ground-Truth Link Recovery via Compound Number Retrieval",
+  "timestamp": "2026-09-26T18:15:00Z",
+  "status": "VALIDATED_LOCAL_CHAMPION",
+  "objective": "Investigate the 432 unretrieved ground-truth validation links and evaluate targeted low-fanout retrieval channels",
+  "unretrieved_links_analysis": {
+    "total_unretrieved_links": 432,
+    "country_breakdown": {
+      "India": 333,
+      "US": 99,
+      "France": 0
+    },
+    "empty_target_address_count": 51,
+    "non_empty_target_address_count": 381,
+    "zero_shared_existing_keys_count": 340,
+    "primary_root_cause": "Compound plot/door numbers (e.g. 170/1, 371/1519, 116/4, 569/1400) were fragmented into disjoint single digits by standard tokenization, while address token ordering diverges widely between regional and reference sources."
+  },
+  "evaluated_channels": {
+    "cnum_compound_slash_numbers": {
+      "regex": "\\b\\d+[/]\\d+\\b (total digits >= 3)",
+      "target_streaming_time_seconds": 23.43,
+      "fanout_statistics": {
+        "total_matched_keys": 133,
+        "fanout_le_15": 39,
+        "fanout_le_100": 133
+      },
+      "recovered_ground_truth_links": 32,
+      "validation_candidate_pairs_added": 2128,
+      "avg_candidates_added_per_s1": 1.06
+    }
+  },
+  "metrics": {
+    "canonical_v3": {
+      "macro_f0_5": 0.831259,
+      "precision": 0.895836,
+      "recall": 0.720384,
+      "tp": 4957,
+      "fp": 263,
+      "candidates": 190331
+    },
+    "exp005_phase1": {
+      "macro_f0_5": 0.843060,
+      "precision": 0.904724,
+      "recall": 0.735658,
+      "tp": 5063,
+      "fp": 290,
+      "candidates": 190357
+    },
+    "exp005_phase2_champion": {
+      "macro_f0_5": 0.844083,
+      "precision": 0.906224,
+      "recall": 0.736158,
+      "tp": 5066,
+      "fp": 296,
+      "candidates": 191922
+    },
+    "exp006a_compound_numbers_alone": {
+      "macro_f0_5": 0.844630,
+      "precision": 0.905574,
+      "recall": 0.738049,
+      "tp": 5082,
+      "fp": 292,
+      "candidates": 192485
+    },
+    "exp006b_compound_numbers_plus_residual_recovery": {
+      "macro_f0_5": 0.845653,
+      "precision": 0.907073,
+      "recall": 0.738549,
+      "tp": 5085,
+      "fp": 298,
+      "candidates": 193989
+    }
+  },
+  "deltas_vs_exp005_champion": {
+    "macro_f0_5": 0.001570,
+    "precision": 0.000849,
+    "recall": 0.002391,
+    "tp_delta": 19,
+    "fp_delta": 2,
+    "marginal_tp_to_fp_ratio": 9.5
+  },
+  "deltas_vs_canonical_v3": {
+    "macro_f0_5": 0.014394,
+    "precision": 0.011237,
+    "recall": 0.018165,
+    "tp_delta": 128,
+    "fp_delta": 35
+  },
+  "verdict": "KEEP",
+  "conclusion": "EXP-006B delivers a verified +0.001570 Macro F0.5 gain over EXP-005 (+0.014394 over V3) with an exceptional 9.5:1 TP-to-FP ratio on rescued links, formally becoming the new LOCAL VALIDATION CHAMPION."
+}

@@ -1,0 +1,46 @@
+{
+  "status": "ALL_INTEGRITY_CHECKS_PASSED",
+  "sha256": {
+    "exp006b_matching": "be1526cded98b1815372960c7a0b50b7f940eee85398f16d29a561619fffa7a8",
+    "exp006b_candidate": "b7196a319afbcf124e3282ebca8dea61150346ef1ca08198b6c01aa2b6c6396a",
+    "root_matching_EXP006B": "be1526cded98b1815372960c7a0b50b7f940eee85398f16d29a561619fffa7a8",
+    "v3_matching": "e59d2e7cdde95bf80eea2b69e6580c113df46de854189f7fa3ecb504aa75fafe"
+  },
+  "stats": {
+    "total_s1": 1732544,
+    "total_candidates": 33796823,
+    "avg_candidates_per_s1": 19.507050325994605,
+    "total_predicted_links": 5014759,
+    "total_empty_matches": 131444,
+    "by_country": {
+      "US": {
+        "s1": 663106,
+        "matched_s1": 633249,
+        "links": 2125846,
+        "empty": 29857,
+        "candidates": 11829436
+      },
+      "France": {
+        "s1": 259452,
+        "matched_s1": 245922,
+        "links": 856836,
+        "empty": 13530,
+        "candidates": 4190977
+      },
+      "India": {
+        "s1": 809986,
+        "matched_s1": 721929,
+        "links": 2032077,
+        "empty": 88057,
+        "candidates": 17776410
+      }
+    }
+  },
+  "diff_vs_v3": {
+    "differing_entities": 247006,
+    "added_links": 137510,
+    "removed_links": 180569,
+    "empty_to_nonempty": 12013,
+    "nonempty_to_empty": 16962
+  }
+}

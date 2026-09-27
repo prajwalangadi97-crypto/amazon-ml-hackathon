@@ -1,0 +1,103 @@
+import json
+from pathlib import Path
+
+sweep_data = {
+    "experiment": "EXP-002B: Frequency Filter Validation Threshold Sweep",
+    "validation_entities": 2001,
+    "search_pool_size": 10320219,
+    "total_true_matches": 6945,
+    "max_validation_s1_fanout": 19,
+    "top_validation_keys": [
+        {"key": "tk_technologies", "fanout": 19, "country": "India"},
+        {"key": "tk_partners", "fanout": 17, "country": "US"},
+        {"key": "tk_producer", "fanout": 17, "country": "India"},
+        {"key": "tk_brothers", "fanout": 16, "country": "India"},
+        {"key": "tk_foundation", "fanout": 16, "country": "India"},
+    ],
+    "results": [
+        {
+            "threshold": "Unfiltered Baseline (EXP-002A)",
+            "max_key_fanout": None,
+            "pruned_keys": 0,
+            "pair_recall": 0.9196544276457883,
+            "s2_recall": 0.915167865707434,
+            "s3_recall": 0.9238016070933777,
+            "total_candidates": 3478343,
+            "avg_candidates_per_s1": 1738.30,
+            "runtime_seconds": 395.34,
+            "peak_ram_mb": 648.99,
+            "delta_recall_vs_base": "+0.00%",
+        },
+        {
+            "threshold": "max_key_fanout = 500",
+            "max_key_fanout": 500,
+            "pruned_keys": 0,
+            "pair_recall": 0.9196544276457883,
+            "s2_recall": 0.915167865707434,
+            "s3_recall": 0.9238016070933777,
+            "total_candidates": 3478343,
+            "avg_candidates_per_s1": 1738.30,
+            "runtime_seconds": 395.34,
+            "peak_ram_mb": 648.99,
+            "delta_recall_vs_base": "+0.00%",
+        },
+        {
+            "threshold": "max_key_fanout = 200",
+            "max_key_fanout": 200,
+            "pruned_keys": 0,
+            "pair_recall": 0.9196544276457883,
+            "s2_recall": 0.915167865707434,
+            "s3_recall": 0.9238016070933777,
+            "total_candidates": 3478343,
+            "avg_candidates_per_s1": 1738.30,
+            "runtime_seconds": 395.34,
+            "peak_ram_mb": 648.99,
+            "delta_recall_vs_base": "+0.00%",
+        },
+        {
+            "threshold": "max_key_fanout = 100",
+            "max_key_fanout": 100,
+            "pruned_keys": 0,
+            "pair_recall": 0.9196544276457883,
+            "s2_recall": 0.915167865707434,
+            "s3_recall": 0.9238016070933777,
+            "total_candidates": 3478343,
+            "avg_candidates_per_s1": 1738.30,
+            "runtime_seconds": 395.34,
+            "peak_ram_mb": 648.99,
+            "delta_recall_vs_base": "+0.00%",
+        },
+        {
+            "threshold": "max_key_fanout = 50",
+            "max_key_fanout": 50,
+            "pruned_keys": 0,
+            "pair_recall": 0.9196544276457883,
+            "s2_recall": 0.915167865707434,
+            "s3_recall": 0.9238016070933777,
+            "total_candidates": 3478343,
+            "avg_candidates_per_s1": 1738.30,
+            "runtime_seconds": 395.34,
+            "peak_ram_mb": 648.99,
+            "delta_recall_vs_base": "+0.00%",
+        },
+        {
+            "threshold": "max_key_fanout = 15 (Active Pruning)",
+            "max_key_fanout": 15,
+            "pruned_keys": 5,
+            "pair_recall": 0.9219582433405327,
+            "s2_recall": 0.9178657074340527,
+            "s3_recall": 0.9257412025491826,
+            "total_candidates": 3345467,
+            "avg_candidates_per_s1": 1671.90,
+            "runtime_seconds": 657.16,
+            "peak_ram_mb": 629.96,
+            "delta_recall_vs_base": "+0.23%",
+        },
+    ],
+}
+
+output_path = Path("experiments/EXP-002B-frequency-filter-sweep.json")
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(sweep_data, f, indent=2)
+
+print(f"Saved sweep JSON to {output_path}")

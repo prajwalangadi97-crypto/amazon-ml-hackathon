@@ -1,0 +1,16 @@
+{
+  "matching_results_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\v3\\matching_results.tsv",
+  "candidate_pairs_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\v3\\candidate_pairs.tsv",
+  "total_source1_entities": 1732544,
+  "matching_rows": 1732544,
+  "candidate_rows": 1732544,
+  "total_candidate_pairs": 27774044,
+  "total_predicted_matches": 5057818,
+  "matching_singletons": 126495,
+  "candidate_singletons": 8618,
+  "every_source1_exact_one_row": true,
+  "total_runtime_seconds": 3627.003975868225,
+  "peak_ram_mb": 11178.79296875,
+  "validator_exit_code": 0,
+  "ready_for_upload": true
+}

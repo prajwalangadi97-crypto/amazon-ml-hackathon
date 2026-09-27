@@ -1,0 +1,65 @@
+{
+  "config_id": "exp005_local_champion",
+  "name": "EXP-005: Channel Consensus First + Selective Residual Recovery",
+  "status": "VALIDATED_LOCAL_CHAMPION",
+  "retrieval": {
+    "channels": [
+      "exact_name_norm",
+      "address_pin_token",
+      "address_num_token",
+      "relaxed_address_keys",
+      "name_locality_keys",
+      "name_token_pairs"
+    ],
+    "frequency_filter": {
+      "max_key_fanout": 15,
+      "preserve_exact_name": true,
+      "preserve_pin_keys": true
+    },
+    "phase1_ranking_policy": "channel_consensus_first",
+    "phase1_candidate_cap": 100,
+    "phase2_recovery": {
+      "enabled": true,
+      "target_entities": "unresolved_s1_entities_with_zero_phase1_predictions",
+      "max_recovered_candidates_per_entity": 20,
+      "selection_filter": "ch_count >= 2 or s_addr >= 0.60 or has_pin or has_house",
+      "sorting_key": "(-ch_count, best_tier, -max(score, s_addr), -spec_sum)"
+    }
+  },
+  "features": {
+    "base_count": 22,
+    "metadata_count": 4,
+    "total_count": 26,
+    "feature_names": [
+      "country_eq", "source_type", "s1_name_empty", "target_name_empty",
+      "s1_addr_empty", "target_addr_empty", "name_exact_eq", "name_fuzz_ratio",
+      "name_fuzz_wratio", "name_token_set_ratio", "name_token_sort_ratio",
+      "name_prefix_similarity", "name_len_diff", "name_len_ratio",
+      "addr_fuzz_ratio", "addr_token_similarity", "numeric_token_overlap",
+      "house_number_agreement", "postal_pin_overlap", "addr_len_diff",
+      "cross_field_name_loc", "cheap_candidate_score",
+      "channel_agreement_count", "retrieval_priority_tier",
+      "reciprocal_retrieval_rank", "s1_candidate_pool_size"
+    ]
+  },
+  "matcher": {
+    "model_artifact": "artifacts/xgb_matcher_exp004b.json",
+    "model_type": "xgboost"
+  },
+  "decision_layer": {
+    "france_threshold": 0.45,
+    "us_threshold": 0.65,
+    "india_threshold": 0.55,
+    "margin_delta": 0.30,
+    "default_threshold": 0.60
+  },
+  "validation_metrics": {
+    "macro_f0_5": 0.844083,
+    "precision": 0.906224,
+    "recall": 0.736158,
+    "tp": 5066,
+    "fp": 296,
+    "singleton_accuracy": 0.767857
+  },
+  "leaderboard_score": null
+}

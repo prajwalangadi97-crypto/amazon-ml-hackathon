@@ -1,0 +1,55 @@
+{
+  "experiment_id": "EXP-005A",
+  "description": "Phase 1: Adaptive Candidate Ranking Benchmark",
+  "timestamp": "2026-09-26T17:05:58Z",
+  "validation_entities": 2001,
+  "total_runtime_seconds": 150.21513295173645,
+  "results": {
+    "V3_Baseline_Cap100": {
+      "macro_f0_5": 0.8312135321671784,
+      "precision": 0.8958360105661463,
+      "recall": 0.7202176689433057,
+      "tp": 4956,
+      "fp": 263,
+      "predicted": 5219,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357
+    },
+    "EXP005_Channel_Consensus_First_Cap100": {
+      "macro_f0_5": 0.8430595865435322,
+      "precision": 0.9047244235025349,
+      "recall": 0.7356583612955421,
+      "tp": 5063,
+      "fp": 290,
+      "predicted": 5353,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357
+    },
+    "EXP005_Adaptive_Consensus_Cap100": {
+      "macro_f0_5": 0.8406011302960074,
+      "precision": 0.9009366348571752,
+      "recall": 0.7353027851153783,
+      "tp": 5060,
+      "fp": 313,
+      "predicted": 5373,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357
+    },
+    "EXP005_Modality_Balanced_Cap100": {
+      "macro_f0_5": 0.8383256557080667,
+      "precision": 0.8985378342574747,
+      "recall": 0.7337605007020293,
+      "tp": 5047,
+      "fp": 320,
+      "predicted": 5367,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357
+    }
+  },
+  "deltas": {
+    "macro_f0_5": 0.011846054376353776,
+    "precision": 0.008888412936388645,
+    "recall": 0.01544069235223633
+  },
+  "verdict": "KEEP"
+}

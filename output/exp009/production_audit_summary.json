@@ -1,0 +1,48 @@
+{
+  "status": "ALL_INTEGRITY_CHECKS_PASSED",
+  "experiment_id": "EXP-010-PRODUCTION",
+  "model": "xgb_matcher_exp009.json",
+  "validation_metrics": {
+    "macro_f0_5": 0.872996,
+    "precision": 0.927627,
+    "recall": 0.774103,
+    "tp": 5339,
+    "fp": 209,
+    "singleton_accuracy": 0.794643
+  },
+  "sha256": {
+    "exp009_matching": "91b30bade4b9e8a12b0b16201edd630ebe6cea20696e39e89c8c4231e3cb636e",
+    "exp009_candidate": "b02ea25c38dd7446b10502e060311542e44be1fc523ab9851bbb1033246f2bd7",
+    "exp009_model": "360b906d808f5ee813461c1ac73d2d4c71d7126b143ec2bfcec765e8360e0871"
+  },
+  "stats": {
+    "total_s1": 1732544,
+    "total_candidates": 33775524,
+    "avg_candidates_per_s1": 19.49475684311625,
+    "total_predicted_links": 5398662,
+    "total_empty_matches": 115024,
+    "total_matched_s1": 1617520,
+    "by_country": {
+      "US": {
+        "s1_count": 663106,
+        "matched_s1": 628305,
+        "empty_s1": 34801,
+        "predicted_links": 2119712
+      },
+      "France": {
+        "s1_count": 259452,
+        "matched_s1": 248566,
+        "empty_s1": 10886,
+        "predicted_links": 1049994
+      },
+      "India": {
+        "s1_count": 809986,
+        "matched_s1": 740649,
+        "empty_s1": 69337,
+        "predicted_links": 2228956
+      }
+    }
+  },
+  "validator_exit_code": 0,
+  "test_suite_exit_code": 0
+}

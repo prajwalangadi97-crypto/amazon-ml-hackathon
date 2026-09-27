@@ -1,0 +1,16 @@
+{
+  "matching_results_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\smoke_test\\matching_results_smoke.tsv",
+  "candidate_pairs_path": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\output\\smoke_test\\candidate_pairs_smoke.tsv",
+  "total_source1_entities": 150,
+  "matching_rows": 150,
+  "candidate_rows": 150,
+  "total_candidate_pairs": 2250,
+  "total_predicted_matches": 453,
+  "matching_singletons": 11,
+  "candidate_singletons": 0,
+  "every_source1_exact_one_row": true,
+  "total_runtime_seconds": 666.71462059021,
+  "peak_ram_mb": 4526.671875,
+  "validator_exit_code": 0,
+  "ready_for_upload": false
+}

@@ -1,0 +1,3064 @@
+{
+  "total_files": 295,
+  "total_bytes": 9001149772,
+  "total_gb": 8.38,
+  "large_files_count": 20,
+  "large_files": [
+    {
+      "path": "artifacts/exp005/val_raw_candidates.pkl",
+      "bytes": 612699953,
+      "mb": 584.32
+    },
+    {
+      "path": "artifacts/target_index_france.pkl",
+      "bytes": 247843851,
+      "mb": 236.36
+    },
+    {
+      "path": "artifacts/target_index_india.pkl",
+      "bytes": 1005476813,
+      "mb": 958.9
+    },
+    {
+      "path": "artifacts/target_index_us.pkl",
+      "bytes": 960306237,
+      "mb": 915.82
+    },
+    {
+      "path": "dataset/test/test_source1.tsv",
+      "bytes": 175022086,
+      "mb": 166.91
+    },
+    {
+      "path": "dataset/test/test_source2.tsv",
+      "bytes": 509456422,
+      "mb": 485.86
+    },
+    {
+      "path": "dataset/test/test_source3.tsv",
+      "bytes": 506002772,
+      "mb": 482.56
+    },
+    {
+      "path": "dataset/train/train_ground_truth.tsv",
+      "bytes": 127015583,
+      "mb": 121.13
+    },
+    {
+      "path": "dataset/train/train_source1.tsv",
+      "bytes": 210069713,
+      "mb": 200.34
+    },
+    {
+      "path": "dataset/train/train_source2.tsv",
+      "bytes": 489301488,
+      "mb": 466.63
+    },
+    {
+      "path": "dataset/train/train_source3.tsv",
+      "bytes": 503705637,
+      "mb": 480.37
+    },
+    {
+      "path": "output/candidate_pairs.tsv",
+      "bytes": 380316030,
+      "mb": 362.7
+    },
+    {
+      "path": "output/checkpoints/candidates_india.tsv",
+      "bytes": 162550814,
+      "mb": 155.02
+    },
+    {
+      "path": "output/checkpoints/candidates_us.tsv",
+      "bytes": 160546298,
+      "mb": 153.11
+    },
+    {
+      "path": "output/exp006b/candidate_pairs.tsv",
+      "bytes": 459665533,
+      "mb": 438.37
+    },
+    {
+      "path": "output/exp009/candidate_pairs.tsv",
+      "bytes": 459390958,
+      "mb": 438.11
+    },
+    {
+      "path": "output/v3/candidate_pairs.tsv",
+      "bytes": 380316030,
+      "mb": 362.7
+    },
+    {
+      "path": "output/v3/checkpoints/candidates_india.tsv",
+      "bytes": 162550814,
+      "mb": 155.02
+    },
+    {
+      "path": "output/v3/checkpoints/candidates_us.tsv",
+      "bytes": 160546298,
+      "mb": 153.11
+    },
+    {
+      "path": "scratch/target_index_france.pkl",
+      "bytes": 247843851,
+      "mb": 236.36
+    }
+  ],
+  "secrets_flagged": [],
+  "exp009_matching_sha256": "91b30bade4b9e8a12b0b16201edd630ebe6cea20696e39e89c8c4231e3cb636e",
+  "exp009_candidate_sha256": "b02ea25c38dd7446b10502e060311542e44be1fc523ab9851bbb1033246f2bd7",
+  "exp009_hashes_verified": true,
+  "inventory": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 831,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": ".pytest_cache/.gitignore",
+      "size_bytes": 37,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "size_bytes": 191,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "size_bytes": 302,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": ".pytest_cache/v/cache/lastfailed",
+      "size_bytes": 2,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": ".pytest_cache/v/cache/nodeids",
+      "size_bytes": 5204,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "Documentation_template.md",
+      "size_bytes": 2249,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 14393,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/blocking/missed_analysis_summary.json",
+      "size_bytes": 1134006,
+      "size_mb": 1.08,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/blocking/missed_link_analysis_EXP001E.md",
+      "size_bytes": 22712,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/blocking/missed_links_EXP001D.tsv",
+      "size_bytes": 170975,
+      "size_mb": 0.16,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/blocking_experiment_report.md",
+      "size_bytes": 14641,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/dataset_profile.txt",
+      "size_bytes": 6744,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/exp005/val_raw_candidates.pkl",
+      "size_bytes": 612699953,
+      "size_mb": 584.32,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/target_index_france.pkl",
+      "size_bytes": 247843851,
+      "size_mb": 236.36,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/target_index_india.pkl",
+      "size_bytes": 1005476813,
+      "size_mb": 958.9,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/target_index_manifest.json",
+      "size_bytes": 5893,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/target_index_us.pkl",
+      "size_bytes": 960306237,
+      "size_mb": 915.82,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/xgb_matcher_exp002b.json",
+      "size_bytes": 473272,
+      "size_mb": 0.45,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/xgb_matcher_exp004b.json",
+      "size_bytes": 488773,
+      "size_mb": 0.47,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "artifacts/xgb_matcher_exp009.json",
+      "size_bytes": 915891,
+      "size_mb": 0.87,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/.DS_Store",
+      "size_bytes": 6148,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/test/test_source1.tsv",
+      "size_bytes": 175022086,
+      "size_mb": 166.91,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/test/test_source2.tsv",
+      "size_bytes": 509456422,
+      "size_mb": 485.86,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/test/test_source3.tsv",
+      "size_bytes": 506002772,
+      "size_mb": 482.56,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/train/train_ground_truth.tsv",
+      "size_bytes": 127015583,
+      "size_mb": 121.13,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/train/train_source1.tsv",
+      "size_bytes": 210069713,
+      "size_mb": 200.34,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/train/train_source2.tsv",
+      "size_bytes": 489301488,
+      "size_mb": 466.63,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "dataset/train/train_source3.tsv",
+      "size_bytes": 503705637,
+      "size_mb": 480.37,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001A.json",
+      "size_bytes": 1392,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001B.json",
+      "size_bytes": 1412,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001C.json",
+      "size_bytes": 1392,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001D.json",
+      "size_bytes": 1540,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001E-A.json",
+      "size_bytes": 1523,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001E-B.json",
+      "size_bytes": 1544,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001E-C.json",
+      "size_bytes": 1521,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-001E-Union.json",
+      "size_bytes": 1546,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.30-Cap100.json",
+      "size_bytes": 2000,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.30-Cap200.json",
+      "size_bytes": 2001,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.30-Cap50.json",
+      "size_bytes": 1985,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.40-Cap100.json",
+      "size_bytes": 1999,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.40-Cap25.json",
+      "size_bytes": 1987,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.40-Cap50.json",
+      "size_bytes": 1987,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.50-Cap100.json",
+      "size_bytes": 1994,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.50-Cap25.json",
+      "size_bytes": 1985,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Hybrid-T0.50-Cap50.json",
+      "size_bytes": 1985,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Threshold-0.30.json",
+      "size_bytes": 2011,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Threshold-0.40.json",
+      "size_bytes": 2011,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Threshold-0.50.json",
+      "size_bytes": 2004,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Threshold-0.60.json",
+      "size_bytes": 1997,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Threshold-0.70.json",
+      "size_bytes": 1988,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Top-100.json",
+      "size_bytes": 1981,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Top-200.json",
+      "size_bytes": 1986,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Top-25.json",
+      "size_bytes": 1967,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-Top-50.json",
+      "size_bytes": 1970,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-TwoTier-H0.60-L0.35-Cap100.json",
+      "size_bytes": 2056,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-TwoTier-H0.60-L0.35-Cap50.json",
+      "size_bytes": 2043,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A-report.txt",
+      "size_bytes": 4566,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002A.json",
+      "size_bytes": 18979,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-frequency-filter-sweep.json",
+      "size_bytes": 3235,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-global-cap1000-benchmark.json",
+      "size_bytes": 686,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-global-cap1000-benchmark.txt",
+      "size_bytes": 1446,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-improved-compression-benchmark.json",
+      "size_bytes": 733,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-improved-compression-benchmark.txt",
+      "size_bytes": 1240,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-optimized-blocking-benchmark.txt",
+      "size_bytes": 1116,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-specificity-aware-cap100.json",
+      "size_bytes": 488,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-specificity-aware-cap100.txt",
+      "size_bytes": 1485,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-specificity-cap100-xgb-evaluation.json",
+      "size_bytes": 652,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B-specificity-cap100-xgb-evaluation.txt",
+      "size_bytes": 2617,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-002B.json",
+      "size_bytes": 10175,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-003A-decision-layer.json",
+      "size_bytes": 11406,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-003B.json",
+      "size_bytes": 2197,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-004A-retrieval-metadata-audit.json",
+      "size_bytes": 12236,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-004B-production-smoke-test.json",
+      "size_bytes": 1778,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-004B.json",
+      "size_bytes": 5367,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-005-reproduction-audit.json",
+      "size_bytes": 3108,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-005A-adaptive-ranking.json",
+      "size_bytes": 1628,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-005B-residual-recovery.json",
+      "size_bytes": 1250,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-006-unretrieved-analysis.json",
+      "size_bytes": 2851,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-007A-stage1-gate.json",
+      "size_bytes": 496,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/EXP-009-rich-matcher.json",
+      "size_bytes": 6917,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/V3-production-report.json",
+      "size_bytes": 2492,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001A-NoCountry_metrics.json",
+      "size_bytes": 4873,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001A_metrics.json",
+      "size_bytes": 4871,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001B-NoCountry_metrics.json",
+      "size_bytes": 4566,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001B_metrics.json",
+      "size_bytes": 4564,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001C-NoCountry_metrics.json",
+      "size_bytes": 4767,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001C_metrics.json",
+      "size_bytes": 4760,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001D-NoCountry_metrics.json",
+      "size_bytes": 4026,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001D_metrics.json",
+      "size_bytes": 4046,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001E-A_metrics.json",
+      "size_bytes": 4664,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001E-B_metrics.json",
+      "size_bytes": 4893,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001E-C_metrics.json",
+      "size_bytes": 5126,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/EXP-001E-Union_metrics.json",
+      "size_bytes": 4125,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/blocking/FORENSIC_RECONCILIATION_AUDIT.json",
+      "size_bytes": 2359,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/config.json",
+      "size_bytes": 1383,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/configs/exp005_local_champion.json",
+      "size_bytes": 2148,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/configs/exp006_compound_retrieval.json",
+      "size_bytes": 2343,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/configs/v3_production.json",
+      "size_bytes": 1733,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/experiments_log.jsonl",
+      "size_bytes": 71623,
+      "size_mb": 0.07,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/fn_score_analysis.json",
+      "size_bytes": 357370,
+      "size_mb": 0.34,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/leaderboard_history.json",
+      "size_bytes": 2336,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/missed_pairs_full_diagnosis.json",
+      "size_bytes": 6670,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/splits/validation_split_seed42_benchmark_10000.json",
+      "size_bytes": 209109,
+      "size_mb": 0.2,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/splits/validation_split_seed42_full.json",
+      "size_bytes": 46098301,
+      "size_mb": 43.96,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/test_s1_blocking_key_distribution.json",
+      "size_bytes": 17344,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "experiments/validation_missed_links_analysis.json",
+      "size_bytes": 432174,
+      "size_mb": 0.41,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/candidate_pairs.tsv",
+      "size_bytes": 380316030,
+      "size_mb": 362.7,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/candidates_france.tsv",
+      "size_bytes": 57218879,
+      "size_mb": 54.57,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/candidates_india.tsv",
+      "size_bytes": 162550814,
+      "size_mb": 155.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/candidates_us.tsv",
+      "size_bytes": 160546298,
+      "size_mb": 153.11,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/matches_france.tsv",
+      "size_bytes": 15846280,
+      "size_mb": 15.11,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/matches_india.tsv",
+      "size_bytes": 33011920,
+      "size_mb": 31.48,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/checkpoints/matches_us.tsv",
+      "size_bytes": 33876537,
+      "size_mb": 32.31,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp006b/candidate_pairs.tsv",
+      "size_bytes": 459665533,
+      "size_mb": 438.37,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp006b/matching_results.tsv",
+      "size_bytes": 88830427,
+      "size_mb": 84.72,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp006b/production_audit_summary.json",
+      "size_bytes": 1350,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp009/candidate_pairs.tsv",
+      "size_bytes": 459390958,
+      "size_mb": 438.11,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp009/matching_results.tsv",
+      "size_bytes": 93762919,
+      "size_mb": 89.42,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp009/production_audit_summary.json",
+      "size_bytes": 1385,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/exp009/production_summary.json",
+      "size_bytes": 1842,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/matching_results.tsv",
+      "size_bytes": 82734774,
+      "size_mb": 78.9,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/matching_results_EXP006B.tsv",
+      "size_bytes": 88830427,
+      "size_mb": 84.72,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/matching_results_FINAL.tsv",
+      "size_bytes": 87647556,
+      "size_mb": 83.59,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/matching_results_V2.tsv",
+      "size_bytes": 82734774,
+      "size_mb": 78.9,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/matching_results_V3.tsv",
+      "size_bytes": 87647556,
+      "size_mb": 83.59,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/project_inventory_report.json",
+      "size_bytes": 80851,
+      "size_mb": 0.08,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/candidate_pairs_smoke.tsv",
+      "size_bytes": 30979,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/candidates_france.tsv",
+      "size_bytes": 10166,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/candidates_india.tsv",
+      "size_bytes": 9275,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/candidates_us.tsv",
+      "size_bytes": 11499,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/matches_france.tsv",
+      "size_bytes": 3026,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/matches_india.tsv",
+      "size_bytes": 1981,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/checkpoints/matches_us.tsv",
+      "size_bytes": 2775,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/matching_results_smoke.tsv",
+      "size_bytes": 7819,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/mini_test/test_source1.tsv",
+      "size_bytes": 14608,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/smoke_test/submission_summary.json",
+      "size_bytes": 658,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/submission_summary.json",
+      "size_bytes": 654,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/candidate_pairs.tsv",
+      "size_bytes": 380316030,
+      "size_mb": 362.7,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/candidates_france.tsv",
+      "size_bytes": 57218879,
+      "size_mb": 54.57,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/candidates_india.tsv",
+      "size_bytes": 162550814,
+      "size_mb": 155.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/candidates_us.tsv",
+      "size_bytes": 160546298,
+      "size_mb": 153.11,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/matches_france.tsv",
+      "size_bytes": 14650534,
+      "size_mb": 13.97,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/matches_india.tsv",
+      "size_bytes": 37222567,
+      "size_mb": 35.5,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/checkpoints/matches_us.tsv",
+      "size_bytes": 35774418,
+      "size_mb": 34.12,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/matching_results.tsv",
+      "size_bytes": 87647556,
+      "size_mb": 83.59,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "output/v3/submission_summary.json",
+      "size_bytes": 661,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/__pycache__/test_batch_calibration.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 20948,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/__pycache__/test_target_index_feasibility.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 20556,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/__pycache__/test_target_index_feasibility.cpython-311.pyc",
+      "size_bytes": 20421,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/analyze_cap_misses.py",
+      "size_bytes": 1154,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/analyze_residual_targets.py",
+      "size_bytes": 2639,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/benchmark_chunk_results.pkl",
+      "size_bytes": 37922085,
+      "size_mb": 36.17,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/calibrate_chunk_runtime.py",
+      "size_bytes": 11928,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/count_test_countries.py",
+      "size_bytes": 706,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/diagnose_residual_entities.py",
+      "size_bytes": 5135,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/measure_stream_speed.py",
+      "size_bytes": 3417,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/micro_bench.py",
+      "size_bytes": 2769,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/missed_432_pairs.json",
+      "size_bytes": 14611,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/save_sweep_report.py",
+      "size_bytes": 3759,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/target_index_france.pkl",
+      "size_bytes": 247843851,
+      "size_mb": 236.36,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": true,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/test_batch_calibration.py",
+      "size_bytes": 11685,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/test_target_index_feasibility.py",
+      "size_bytes": 14606,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "scratch/val_candidate_scores_exp002b.pkl",
+      "size_bytes": 5228202,
+      "size_mb": 4.99,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/__init__.py",
+      "size_bytes": 62,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 242,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__init__.py",
+      "size_bytes": 491,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 630,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/evaluator.cpython-311.pyc",
+      "size_bytes": 12345,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/frequency_filter.cpython-311.pyc",
+      "size_bytes": 6205,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/normalizers.cpython-311.pyc",
+      "size_bytes": 8520,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/retrieval.cpython-311.pyc",
+      "size_bytes": 10243,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/__pycache__/transliteration.cpython-311.pyc",
+      "size_bytes": 5516,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/evaluator.py",
+      "size_bytes": 11104,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/frequency_filter.py",
+      "size_bytes": 5439,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/normalizers.py",
+      "size_bytes": 6108,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/retrieval.py",
+      "size_bytes": 6849,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/blocking/transliteration.py",
+      "size_bytes": 5102,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/__init__.py",
+      "size_bytes": 330,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 527,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/__pycache__/ground_truth.cpython-311.pyc",
+      "size_bytes": 5414,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/__pycache__/split.cpython-311.pyc",
+      "size_bytes": 10488,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/ground_truth.py",
+      "size_bytes": 3302,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/data/split.py",
+      "size_bytes": 6899,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/evaluation/__init__.py",
+      "size_bytes": 327,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/evaluation/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 494,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/evaluation/__pycache__/metrics.cpython-311.pyc",
+      "size_bytes": 11953,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/evaluation/metrics.py",
+      "size_bytes": 11494,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/experiments/__init__.py",
+      "size_bytes": 175,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/experiments/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 395,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/experiments/__pycache__/logger.cpython-311.pyc",
+      "size_bytes": 8245,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/experiments/logger.py",
+      "size_bytes": 4309,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/__init__.py",
+      "size_bytes": 705,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 824,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/__pycache__/candidate_compression.cpython-311.pyc",
+      "size_bytes": 24858,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/__pycache__/decision_layer.cpython-311.pyc",
+      "size_bytes": 5546,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/__pycache__/rich_features.cpython-311.pyc",
+      "size_bytes": 13213,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/candidate_compression.py",
+      "size_bytes": 20081,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/decision_layer.py",
+      "size_bytes": 3492,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "src/matching/rich_features.py",
+      "size_bytes": 12558,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/.pytest_cache/.gitignore",
+      "size_bytes": 37,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/.pytest_cache/CACHEDIR.TAG",
+      "size_bytes": 191,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/.pytest_cache/README.md",
+      "size_bytes": 302,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/.pytest_cache/v/cache/nodeids",
+      "size_bytes": 2,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__init__.py",
+      "size_bytes": 60,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/__init__.cpython-311.pyc",
+      "size_bytes": 242,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/run_tests.cpython-311.pyc",
+      "size_bytes": 1312,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_candidate_compression.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 8817,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_candidate_compression.cpython-311.pyc",
+      "size_bytes": 8682,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_decision_layer.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 4937,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_decision_layer.cpython-311.pyc",
+      "size_bytes": 4802,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_evaluator.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 13545,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_evaluator.cpython-311.pyc",
+      "size_bytes": 13410,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_feature_invariance.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 21755,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_frequency_filter.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 5941,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_frequency_filter.cpython-311.pyc",
+      "size_bytes": 5806,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_ground_truth.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 3689,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_ground_truth.cpython-311.pyc",
+      "size_bytes": 3554,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_logger.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 3900,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_logger.cpython-311.pyc",
+      "size_bytes": 3765,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_retrieval.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 9903,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_rich_features.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 11503,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_split.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 5612,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_split.cpython-311.pyc",
+      "size_bytes": 5477,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_target_index.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 22180,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/__pycache__/test_transliteration.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 28163,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/run_tests.py",
+      "size_bytes": 642,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_candidate_compression.py",
+      "size_bytes": 5802,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_decision_layer.py",
+      "size_bytes": 3432,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_evaluator.py",
+      "size_bytes": 8343,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_feature_invariance.py",
+      "size_bytes": 4284,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_frequency_filter.py",
+      "size_bytes": 3258,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_ground_truth.py",
+      "size_bytes": 1892,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_logger.py",
+      "size_bytes": 2187,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_retrieval.py",
+      "size_bytes": 2103,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_rich_features.py",
+      "size_bytes": 2031,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_split.py",
+      "size_bytes": 3000,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_target_index.py",
+      "size_bytes": 4048,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tests/test_transliteration.py",
+      "size_bytes": 3989,
+      "size_mb": 0.0,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/audit_exp009_production.cpython-311.pyc",
+      "size_bytes": 17759,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/benchmark_optimized_blocking.cpython-311.pyc",
+      "size_bytes": 32800,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/build_target_indexes.cpython-311.pyc",
+      "size_bytes": 28332,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/evaluate_exp009_validation.cpython-311.pyc",
+      "size_bytes": 27817,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/evaluate_specificity_cap100_xgb.cpython-311.pyc",
+      "size_bytes": 36434,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/generate_final_submission.cpython-311.pyc",
+      "size_bytes": 38293,
+      "size_mb": 0.04,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/reproduce_exp005_audit.cpython-311.pyc",
+      "size_bytes": 46822,
+      "size_mb": 0.04,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_candidate_compression_experiments.cpython-311.pyc",
+      "size_bytes": 29455,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_exp005_adaptive_ranking.cpython-311.pyc",
+      "size_bytes": 47607,
+      "size_mb": 0.05,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_exp005_phase2_residual_recovery.cpython-311.pyc",
+      "size_bytes": 27338,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_exp009_full_production.cpython-311.pyc",
+      "size_bytes": 36983,
+      "size_mb": 0.04,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_exp009_rich_matcher.cpython-311.pyc",
+      "size_bytes": 44457,
+      "size_mb": 0.04,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_recovery_experiments.cpython-311.pyc",
+      "size_bytes": 26352,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_v3_full_production.cpython-311.pyc",
+      "size_bytes": 24054,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/run_v3_production_smoke_test.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 35548,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/test_recovery_hypotheses.cpython-311-pytest-9.1.0.pyc",
+      "size_bytes": 15490,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/__pycache__/train_and_validate_xgb.cpython-311.pyc",
+      "size_bytes": 35314,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": true,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/analyze_missed_links.py",
+      "size_bytes": 22752,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/analyze_test_s1_blocking_keys.py",
+      "size_bytes": 9386,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/analyze_validation_misses.py",
+      "size_bytes": 13278,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/audit_exp006b_production.py",
+      "size_bytes": 13031,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/audit_exp009_production.py",
+      "size_bytes": 11301,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/benchmark_global_cap_1000.py",
+      "size_bytes": 22537,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/benchmark_improved_compression.py",
+      "size_bytes": 21434,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/benchmark_optimized_blocking.py",
+      "size_bytes": 21559,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/benchmark_specificity_aware_cap100.py",
+      "size_bytes": 24299,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/build_target_indexes.py",
+      "size_bytes": 20007,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/create_split.py",
+      "size_bytes": 3873,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/evaluate_decision_layer.py",
+      "size_bytes": 31897,
+      "size_mb": 0.03,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/evaluate_exp009_validation.py",
+      "size_bytes": 17951,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/evaluate_specificity_cap100_xgb.py",
+      "size_bytes": 25634,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/forensic_reconcile.py",
+      "size_bytes": 11138,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/generate_final_submission.py",
+      "size_bytes": 28593,
+      "size_mb": 0.03,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/generate_project_inventory.py",
+      "size_bytes": 7262,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/generate_submission_exp002b.py",
+      "size_bytes": 21076,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/log_blocking_results.py",
+      "size_bytes": 5050,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/print_candidate_cap.py",
+      "size_bytes": 1049,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/print_examples.py",
+      "size_bytes": 1384,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/profile_dataset.py",
+      "size_bytes": 15705,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/reproduce_exp005_audit.py",
+      "size_bytes": 33369,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_blocking_experiments.py",
+      "size_bytes": 23704,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_candidate_compression_experiments.py",
+      "size_bytes": 25495,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp005_adaptive_ranking.py",
+      "size_bytes": 34211,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp005_phase2_residual_recovery.py",
+      "size_bytes": 17491,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp006b_full_production.py",
+      "size_bytes": 28127,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp007a_stage1_gate.py",
+      "size_bytes": 12471,
+      "size_mb": 0.01,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp009_full_production.py",
+      "size_bytes": 25812,
+      "size_mb": 0.02,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_exp009_rich_matcher.py",
+      "size_bytes": 31967,
+      "size_mb": 0.03,
+      "is_tracked": false,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_metadata_experiment_exp004b.py",
+      "size_bytes": 34469,
+      "size_mb": 0.03,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_recovery_experiments.py",
+      "size_bytes": 18222,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_v3_full_production.py",
+      "size_bytes": 18158,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/run_v3_production_smoke_test.py",
+      "size_bytes": 14471,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/test_recovery_hypotheses.py",
+      "size_bytes": 10074,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/train_and_validate_xgb.py",
+      "size_bytes": 23600,
+      "size_mb": 0.02,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "tools/verify_v3_submission_file.py",
+      "size_bytes": 5238,
+      "size_mb": 0.0,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    },
+    {
+      "path": "utils/validate_submission.py",
+      "size_bytes": 14036,
+      "size_mb": 0.01,
+      "is_tracked": true,
+      "is_ignored": false,
+      "exceeds_100mb": false,
+      "has_secret": false,
+      "secret_types": []
+    }
+  ]
+}

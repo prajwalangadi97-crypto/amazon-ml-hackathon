@@ -10,6 +10,8 @@ import unicodedata
 from typing import List, Set
 
 
+from src.blocking.transliteration import has_indic_script, transliterate_indic_to_latin
+
 # Common generic legal suffixes and business stop words
 LEGAL_AND_BUSINESS_STOPWORDS: Set[str] = {
     "inc", "incorporated", "corp", "corporation",
@@ -102,6 +104,22 @@ def extract_token_blocking_keys(name: str, max_tokens: int = 3) -> List[str]:
     longest_token = max(tokens, key=len)
     if len(longest_token) >= 5:
         keys.append(longest_token)
+
+    # For Indic script names, additionally generate transliterated token keys
+    if has_indic_script(name):
+        trans = transliterate_indic_to_latin(name)
+        folded = trans.replace("aa", "a").replace("ee", "i").replace("oo", "u")
+        t_tokens = tokenize_name(folded)
+        if len(t_tokens) == 1:
+            if len(t_tokens[0]) >= 4:
+                keys.append(t_tokens[0])
+        elif len(t_tokens) >= 2:
+            top_t = t_tokens[:max_tokens]
+            for t1, t2 in itertools.combinations(sorted(top_t), 2):
+                keys.append(f"{t1}_{t2}")
+            longest_t = max(t_tokens, key=len)
+            if len(longest_t) >= 5:
+                keys.append(longest_t)
 
     return list(dict.fromkeys(keys))  # preserve order, remove duplicates
 

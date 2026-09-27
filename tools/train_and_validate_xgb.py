@@ -188,6 +188,12 @@ def main():
     parser.add_argument("--source3", type=Path, default=Path("dataset/train/train_source3.tsv"))
     parser.add_argument("--output-model", type=Path, default=Path("artifacts/xgb_matcher_exp002b.json"))
     parser.add_argument("--output-exp", type=Path, default=Path("experiments/EXP-002B.json"))
+    parser.add_argument("--cache-dir", type=Path, default=Path("artifacts/feature_cache"),
+                        help="Directory to save/load cached feature matrices")
+    parser.add_argument("--use-cache", action="store_true",
+                        help="Skip pipeline and load cached matrices from --cache-dir (10x faster)")
+    parser.add_argument("--save-cache", action="store_true", default=True,
+                        help="Save feature matrices to cache after building (default: True)")
     args = parser.parse_args()
 
     overall_start = time.time()
@@ -198,19 +204,52 @@ def main():
     print(f"Workers: {args.num_workers} | Platform: {sys.platform} | CPU cores: {os.cpu_count()}", flush=True)
     print("=" * 80, flush=True)
 
-    # 1. Load Split
-    with open(args.split_file, "r", encoding="utf-8") as f:
-        split_data = json.load(f)
-    val_s1_list = split_data["val_s1_ids"]
-    val_s1_set = set(val_s1_list)
-    all_train_s1 = split_data["train_s1_ids"]
+    # ── FAST PATH: load cached matrices and skip the full pipeline ──────────
+    import pickle as _pickle
+    _cache_tag      = f"n{args.train_entities}"
+    _cache_path     = args.cache_dir / _cache_tag
+    _cache_matrices = _cache_path / "matrices.npz"
+    _cache_keys     = _cache_path / "pair_keys.pkl"
+    _skip_pipeline  = False
 
-    # Select disjoint training entities (sample up to args.train_entities)
-    train_s1_list = all_train_s1[: args.train_entities]
-    train_s1_set = set(train_s1_list)
+    if args.use_cache and _cache_matrices.exists() and _cache_keys.exists():
+        print(f"[CACHE] Loading pre-built matrices from {_cache_path} ...", flush=True)
+        _t0 = time.time()
+        _mats = np.load(str(_cache_matrices))
+        X_train, y_train = _mats["X_train"], _mats["y_train"]
+        X_val,   y_val   = _mats["X_val"],   _mats["y_val"]
+        with open(_cache_keys, "rb") as _f:
+            _keys = _pickle.load(_f)
+        train_pairs = _keys["train_pairs"]
+        val_pairs   = _keys["val_pairs"]
+        val_s1_list = _keys["val_s1_list"]
+        val_gt = parse_ground_truth(args.ground_truth, allowed_s1_ids=set(val_s1_list))
+        train_pos = int(np.sum(y_train == 1)); train_neg = int(np.sum(y_train == 0))
+        val_pos   = int(np.sum(y_val   == 1)); val_neg   = int(np.sum(y_val   == 0))
+        print(f"[CACHE] Loaded in {time.time()-_t0:.1f}s — "
+              f"Train {X_train.shape} pos={train_pos:,}  Val {X_val.shape} pos={val_pos:,}", flush=True)
+        _skip_pipeline = True
+    elif args.use_cache:
+        print(f"[CACHE] No cache at {_cache_path}. Building from scratch...", flush=True)
 
-    assert train_s1_set.isdisjoint(val_s1_set), "CRITICAL ERROR: Train and Val sets overlap!"
-    print(f"Disjoint S1 Partition: Train={len(train_s1_set):,} entities, Val={len(val_s1_set):,} entities.", flush=True)
+    if not _skip_pipeline:
+        pass  # pipeline below runs unless cache loaded
+
+    if not _skip_pipeline:
+        # 1. Load Split
+        with open(args.split_file, "r", encoding="utf-8") as f:
+            split_data = json.load(f)
+        val_s1_list = split_data["val_s1_ids"]
+        val_s1_set = set(val_s1_list)
+        all_train_s1 = split_data["train_s1_ids"]
+
+        # Select disjoint training entities (sample up to args.train_entities)
+        train_s1_list = all_train_s1[: args.train_entities]
+        train_s1_set = set(train_s1_list)
+
+        assert train_s1_set.isdisjoint(val_s1_set), "CRITICAL ERROR: Train and Val sets overlap!"
+        print(f"Disjoint S1 Partition: Train={len(train_s1_set):,} entities, Val={len(val_s1_set):,} entities.", flush=True)
+
 
     # 2. Parse Ground Truth
     train_gt = parse_ground_truth(args.ground_truth, allowed_s1_ids=train_s1_set)
@@ -367,24 +406,56 @@ def main():
     print(f"Train Matrix: {X_train.shape} | Positives={train_pos:,} | Negatives={train_neg:,} (ratio: {train_neg/max(train_pos, 1):.1f}:1)", flush=True)
     print(f"Val Matrix  : {X_val.shape} | Positives={val_pos:,} | Negatives={val_neg:,} (ratio: {val_neg/max(val_pos, 1):.1f}:1)", flush=True)
 
-    # 8. Train XGBoost Binary Classifier
-    print("\nTraining XGBoost Pairwise Matcher (binary:logistic, num_boost_round=150, max_depth=5)...", flush=True)
+    # Save feature matrices to cache for fast future runs
+    cache_tag = f"n{args.train_entities}"
+    cache_path = args.cache_dir / cache_tag
+    cache_path.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        cache_path / "matrices.npz",
+        X_train=X_train, y_train=y_train,
+        X_val=X_val, y_val=y_val,
+    )
+    # Save pair keys as JSON
+    import pickle
+    with open(cache_path / "pair_keys.pkl", "wb") as f:
+        pickle.dump({"train_pairs": train_pairs, "val_pairs": val_pairs,
+                     "val_s1_list": val_s1_list}, f)
+    print(f"[CACHE] Saved matrices to {cache_path} — next run use --use-cache for instant load!", flush=True)
+
+    # 8. Train XGBoost Binary Classifier (IMPROVED: GPU + tuned hyperparams, no scale_pos_weight)
+    print(f"\nTraining XGBoost Pairwise Matcher (device=cuda, num_boost_round=400, max_depth=6, "
+          f"lr=0.05, NO scale_pos_weight — natural tree handling)...", flush=True)
     t0_xgb = time.time()
     dtrain = xgb.DMatrix(X_train, label=y_train, feature_names=FEATURE_NAMES)
     dval = xgb.DMatrix(X_val, label=y_val, feature_names=FEATURE_NAMES)
     params = {
         "objective": "binary:logistic",
         "eval_metric": "logloss",
-        "max_depth": 5,
-        "learning_rate": 0.1,
-        "subsample": 0.8,
-        "colsample_bytree": 0.8,
+        "device": "cuda",           # RTX 3050 GPU
+        "max_depth": 6,             # deeper than baseline (was 5)
+        "learning_rate": 0.05,      # slower, more precise (was 0.1)
+        "subsample": 0.85,
+        "colsample_bytree": 0.85,
+        "min_child_weight": 3,
+        "gamma": 0.05,
+        "reg_alpha": 0.05,
+        "reg_lambda": 1.2,
+        # scale_pos_weight intentionally removed — it pushed threshold >0.90
         "nthread": args.num_workers,
         "seed": 42,
     }
-    bst = xgb.train(params, dtrain, num_boost_round=150)
+    evals_result = {}
+    bst = xgb.train(
+        params, dtrain,
+        num_boost_round=400,
+        evals=[(dtrain, "train"), (dval, "val")],
+        early_stopping_rounds=30,
+        evals_result=evals_result,
+        verbose_eval=50,
+    )
     t1_xgb = time.time()
-    print(f"XGBoost training complete in {t1_xgb - t0_xgb:.2f}s.", flush=True)
+    print(f"XGBoost training complete in {t1_xgb - t0_xgb:.2f}s. "
+          f"Best iteration: {bst.best_iteration}", flush=True)
 
     # Save model artifact
     args.output_model.parent.mkdir(parents=True, exist_ok=True)
@@ -399,7 +470,9 @@ def main():
 
     # 10. Entity-Level Threshold Optimization Grid Search
     print("\nEvaluating Entity-Level Macro F0.5 over Threshold Grid...", flush=True)
-    threshold_grid = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.60, 0.70, 0.80, 0.90]
+    threshold_grid = [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45,
+                      0.50, 0.55, 0.60, 0.62, 0.65, 0.70, 0.75, 0.80, 0.85,
+                      0.90, 0.92, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99]
 
     grid_results = []
     best_thresh = 0.50

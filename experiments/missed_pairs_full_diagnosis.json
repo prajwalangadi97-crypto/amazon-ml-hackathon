@@ -1,0 +1,277 @@
+{
+  "total": 432,
+  "by_country": {
+    "India": 333,
+    "US": 99
+  },
+  "by_script": {
+    "latin_vs_latin": 279,
+    "latin_vs_indic": 153
+  },
+  "ll_sim_tier": {
+    "near_exact": 165,
+    "high": 47,
+    "very_low": 44,
+    "low": 9,
+    "medium": 14
+  },
+  "by_fix": {
+    "near_exact_name_miss": 179,
+    "cross_script_other": 153,
+    "generic_name": 14,
+    "addr_overlap_no_name": 35,
+    "high_sim_name_miss": 45,
+    "medium_sim_name_miss": 4,
+    "hard_name_mismatch": 2
+  },
+  "samples": {
+    "near_exact_name_miss": [
+      {
+        "sid": "S1-83647344",
+        "tid": "S3-175231511",
+        "cty": "India",
+        "sn": "New India Private Limited",
+        "tn": "New Private Limited 5ervices",
+        "sim": 1.0,
+        "ao": false
+      },
+      {
+        "sid": "S1-557991692",
+        "tid": "S2-88682972",
+        "cty": "India",
+        "sn": "Vinay Tele",
+        "tn": "Vinay Toetle",
+        "sim": 1.0,
+        "ao": false
+      },
+      {
+        "sid": "S1-945360052",
+        "tid": "S3-993303669",
+        "cty": "India",
+        "sn": "Rachana Reality",
+        "tn": "#rachanareality",
+        "sim": 0.9,
+        "ao": true
+      },
+      {
+        "sid": "S1-945360052",
+        "tid": "S2-146961832",
+        "cty": "India",
+        "sn": "Rachana Reality",
+        "tn": "Rachana Reality Corporation",
+        "sim": 1.0,
+        "ao": true
+      }
+    ],
+    "cross_script_other": [
+      {
+        "sid": "S1-508701481",
+        "tid": "S3-444227012",
+        "cty": "India",
+        "sn": "Red Energy Pvt Ltd",
+        "tn": "Red ଏନର୍ଜି Pvt Ltd",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-435197119",
+        "tid": "S2-23416594",
+        "cty": "India",
+        "sn": "Arihant Properties",
+        "tn": "ଅରିହନ୍ତ ପ୍ରୋପର୍ଟିଜ୍",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-435197119",
+        "tid": "S2-976363731",
+        "cty": "India",
+        "sn": "Arihant Properties",
+        "tn": "ଅରିହନ୍ତ ପ୍ରୋପର୍ଟିଜ୍",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-136329156",
+        "tid": "S3-518441474",
+        "cty": "India",
+        "sn": "Baba Care Pvt Ltd",
+        "tn": "பாபா கேர் பிரைவேட் லிமிடெட்",
+        "sim": 0.0,
+        "ao": true
+      }
+    ],
+    "generic_name": [
+      {
+        "sid": "S1-776686932",
+        "tid": "S3-653415229",
+        "cty": "India",
+        "sn": "Bn Technologies Ltd",
+        "tn": "#bntechnologies",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-566265142",
+        "tid": "S3-498027490",
+        "cty": "India",
+        "sn": "JU Solutions Private Limited",
+        "tn": "Private JU Solutions Limited",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-371874635",
+        "tid": "S3-684456756",
+        "cty": "India",
+        "sn": "NL Services Pvt. Ltd.",
+        "tn": "Pvt. NL Services Ltd",
+        "sim": 0.0,
+        "ao": true
+      },
+      {
+        "sid": "S1-115674524",
+        "tid": "S2-396810360",
+        "cty": "India",
+        "sn": "Indian Enterprises LLP",
+        "tn": "Indian (Énterprises)",
+        "sim": 0.0,
+        "ao": true
+      }
+    ],
+    "addr_overlap_no_name": [
+      {
+        "sid": "S1-299367178",
+        "tid": "S2-250009064",
+        "cty": "US",
+        "sn": "American Legacy Islands Inc",
+        "tn": "Veragildsyn",
+        "sim": 0.593,
+        "ao": true
+      },
+      {
+        "sid": "S1-349849273",
+        "tid": "S2-947199280",
+        "cty": "India",
+        "sn": "Jajodia & Co Ltd",
+        "tn": "Mr j.com",
+        "sim": 0.492,
+        "ao": true
+      },
+      {
+        "sid": "S1-730428166",
+        "tid": "S3-300514980",
+        "cty": "India",
+        "sn": "Best Infotech LLP",
+        "tn": "Solnexzeta",
+        "sim": 0.467,
+        "ao": true
+      },
+      {
+        "sid": "S1-665957316",
+        "tid": "S2-231611785",
+        "cty": "India",
+        "sn": "Indo Solutions Pvt Ltd",
+        "tn": "Nylafaye",
+        "sim": 0.458,
+        "ao": true
+      }
+    ],
+    "high_sim_name_miss": [
+      {
+        "sid": "S1-679867766",
+        "tid": "S2-229196987",
+        "cty": "US",
+        "sn": "Bright Seafood Inc",
+        "tn": "brightseafood.com",
+        "sim": 0.892,
+        "ao": true
+      },
+      {
+        "sid": "S1-953545521",
+        "tid": "S2-178012926",
+        "cty": "US",
+        "sn": "5-Legged Dog",
+        "tn": "5leggeddogcom",
+        "sim": 0.821,
+        "ao": true
+      },
+      {
+        "sid": "S1-598852387",
+        "tid": "S2-947962409",
+        "cty": "US",
+        "sn": "Municipals",
+        "tn": "Muiiicpas",
+        "sim": 0.884,
+        "ao": true
+      },
+      {
+        "sid": "S1-149092361",
+        "tid": "S3-584248867",
+        "cty": "US",
+        "sn": "Vaon",
+        "tn": "Vashn",
+        "sim": 0.827,
+        "ao": true
+      }
+    ],
+    "medium_sim_name_miss": [
+      {
+        "sid": "S1-754201992",
+        "tid": "S3-562945328",
+        "cty": "US",
+        "sn": "Rediex LLC",
+        "tn": "Rmrnex LLC",
+        "sim": 0.7,
+        "ao": true
+      },
+      {
+        "sid": "S1-840961764",
+        "tid": "S2-308741469",
+        "cty": "US",
+        "sn": "Behavioral Health Clinic Inc.",
+        "tn": "Belonylayuma",
+        "sim": 0.693,
+        "ao": true
+      },
+      {
+        "sid": "S1-966027321",
+        "tid": "S2-4379937",
+        "cty": "US",
+        "sn": "Probst & Duran Newhold LLC",
+        "tn": "NYLADREX",
+        "sim": 0.641,
+        "ao": true
+      },
+      {
+        "sid": "S1-774875542",
+        "tid": "S3-136044391",
+        "cty": "US",
+        "sn": "Heartland Coalition VI Inc",
+        "tn": "hcvi.com",
+        "sim": 0.704,
+        "ao": true
+      }
+    ],
+    "hard_name_mismatch": [
+      {
+        "sid": "S1-861032717",
+        "tid": "S3-549678242",
+        "cty": "US",
+        "sn": "J/U Earths LLC",
+        "tn": "J/U LLC Center",
+        "sim": 0.556,
+        "ao": false
+      },
+      {
+        "sid": "S1-580071060",
+        "tid": "S3-620827466",
+        "cty": "India",
+        "sn": "Rk Finlease Private Limited",
+        "tn": "Rk Private Limited Partners",
+        "sim": 0.583,
+        "ao": false
+      }
+    ]
+  }
+}

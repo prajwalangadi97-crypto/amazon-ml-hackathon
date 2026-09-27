@@ -1,0 +1,80 @@
+{
+  "experiment_id": "EXP-002C",
+  "hypothesis": "Evaluate non-linear HistGradientBoosting (GBDT) with feature interactions and calibrated F0.5 thresholding.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full S2+S3 search pool.",
+  "blocking_method": "Validated Inverted Index Backbone",
+  "features": [
+    "name_exact_match",
+    "name_token_jaccard",
+    "name_char3_jaccard",
+    "name_token_overlap",
+    "name_len_diff_ratio",
+    "name_first_token_match",
+    "addr_num_overlap",
+    "addr_num_jaccard",
+    "addr_both_have_nums",
+    "addr_token_jaccard",
+    "addr_token_overlap",
+    "addr_len_diff_ratio",
+    "country_exact_match",
+    "is_source_2",
+    "name_addr_cross_overlap"
+  ],
+  "model": "HistGradientBoostingClassifier(learning_rate=0.08, max_iter=150, class_weight='balanced')",
+  "hyperparameters": {
+    "optimal_threshold": 0.95,
+    "learning_rate": 0.08,
+    "max_iter": 150,
+    "max_leaf_nodes": 31
+  },
+  "validation_method": "Macro-averaged F0.5 (Official Metric)",
+  "macro_F0_5": 0.4386340141026509,
+  "precision": 0.4223658152670164,
+  "recall": 0.8036138676693387,
+  "training_time_seconds": 3.75,
+  "inference_time_seconds": 45.71,
+  "notes": "Singletons: 112 (F0.5: 0.0625), Non-Singletons: 1889 (F0.5: 0.4609)",
+  "conclusion": "HistGradientBoosting achieved Macro F0.5 of 0.4386 at threshold T=0.95.",
+  "next_experiment": "EXP-003",
+  "timestamp": "2026-09-25T16:15:43.589170+00:00",
+  "extra_metrics": {
+    "total_entities": 2001,
+    "macro_f0_5": 0.438634,
+    "macro_precision": 0.422366,
+    "macro_recall": 0.803614,
+    "singleton_count": 112,
+    "singleton_f0_5": 0.0625,
+    "non_singleton_count": 1889,
+    "non_singleton_f0_5": 0.460935,
+    "total_tp": 5902,
+    "total_fp": 86098,
+    "total_fn": 1043,
+    "missing_predictions": 0,
+    "cardinality_breakdown": {
+      "0_singleton": {
+        "count": 112.0,
+        "macro_f0_5": 0.0625,
+        "precision": 0.0625,
+        "recall": 0.0625
+      },
+      "1_match": {
+        "count": 104.0,
+        "macro_f0_5": 0.277974,
+        "precision": 0.254492,
+        "recall": 0.836538
+      },
+      "2_match": {
+        "count": 343.0,
+        "macro_f0_5": 0.400778,
+        "precision": 0.382332,
+        "recall": 0.845481
+      },
+      "3+_match": {
+        "count": 1442.0,
+        "macro_f0_5": 0.48844,
+        "precision": 0.471947,
+        "recall": 0.848843
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+====================================================================================================
+END-TO-END VALIDATION EVALUATION: SPECIFICITY-AWARE CAP=100 + EXP-002B XGBOOST
+====================================================================================================
+Validation Entities         : 2,001 Source 1 entities
+Model                       : C:\Users\Nagamani\OneDrive\Desktop\New folder (2)\artifacts\xgb_matcher_exp002b.json
+Decision Threshold (theta)  : 0.60
+Candidate Cap Policy        : Specificity-Aware Max 100 per S1
+
+REQUIRED VALIDATION METRICS:
+  1.  Entity-Level Macro F0.5 : 0.8159
+  2.  Precision               : 0.8803
+  3.  Recall                  : 0.7075
+  4.  Predicted Links         : 5,151
+  5.  True Positives (TP)     : 4,882
+  6.  False Positives (FP)    : 269
+  7.  False Negatives (FN)    : 2,063
+  8.  Candidate Pair Recall   : 86.58% (6,013 / 6,945)
+  9.  Total Candidate Pairs   : 190,331
+  10. Average Candidates / S1 : 95.12
+  11. XGBoost Scoring Runtime : 10.63s (inference: 0.14s)
+  12. Peak RAM                : 781.80 MB
+
+----------------------------------------------------------------------------------------------------
+COMPARISON AGAINST EXP-002B VALIDATION BASELINE:
+----------------------------------------------------------------------------------------------------
+Metric                           | EXP-002B Baseline    | Specificity Cap=100  | Delta          
+----------------------------------------------------------------------------------------------------
+Macro F0.5                       | 0.8364               | 0.8159               | -0.0205
+Precision                        | 0.8943               | 0.8803               | -0.0140
+Recall                           | 0.7361               | 0.7075               | -0.0286
+Decision Threshold               | 0.60                 | 0.60                 | 0.00           
+Total Candidate Pairs            | 3,345,467            | 190,331              | -3,155,136 (-94.3%)
+Average Candidates / S1          | 1,671.90             | 95.12                | -1576.78       
+Predicted Links                  | 5,393                | 5,151                | -242           
+True Positives (TP)              | 5,103                | 4,882                | -221           
+False Positives (FP)             | 290                  | 269                  | -21            
+False Negatives (FN)             | 1,842                | 2,063                | +221           
+====================================================================================================

@@ -1,0 +1,46 @@
+{
+  "experiment_id": "EXP-005B",
+  "description": "Selective Residual Recovery for Unresolved Entities",
+  "timestamp": "2026-09-27T07:48:44Z",
+  "validation_entities": 2001,
+  "total_runtime_seconds": 85.9260663986206,
+  "metrics": {
+    "v3_baseline": {
+      "macro_f0_5": 0.831214,
+      "precision": 0.895836,
+      "recall": 0.720218,
+      "tp": 4956,
+      "fp": 263
+    },
+    "phase1_consensus_first": {
+      "macro_f0_5": 0.8416815364520024,
+      "precision": 0.9045037005306873,
+      "recall": 0.731554460864805,
+      "tp": 5043,
+      "fp": 258
+    },
+    "phase2_r1_secondary_pool": {
+      "macro_f0_5": 0.8424549592644057,
+      "precision": 0.9055032007805623,
+      "recall": 0.7319709193022529,
+      "tp": 5045,
+      "fp": 259
+    },
+    "phase2_r2_strict_residual": {
+      "macro_f0_5": 0.8424549592644057,
+      "precision": 0.9055032007805623,
+      "recall": 0.7319709193022529,
+      "tp": 5045,
+      "fp": 259
+    }
+  },
+  "best_configuration": "Phase2_R1_Secondary_Pool",
+  "deltas_vs_v3": {
+    "macro_f0_5": 0.011240959264405714,
+    "precision": 0.00966720078056238,
+    "recall": 0.011752919302252862,
+    "tp_delta": 89,
+    "fp_delta": -4
+  },
+  "verdict": "KEEP"
+}

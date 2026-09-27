@@ -1,0 +1,70 @@
+{
+  "challenge": "Amazon ML Challenge 2026 - Business Entity Resolution",
+  "primary_metric": "Macro F0.5",
+  "history": [
+    {
+      "submission_id": "V1",
+      "timestamp": "2026-09-25T12:00:00Z",
+      "model": "Initial Baseline",
+      "features": 22,
+      "candidate_cap": 100,
+      "local_f0_5": 0.472736,
+      "local_precision": null,
+      "local_recall": null,
+      "candidate_recall": null,
+      "production_candidates": null,
+      "production_links": null,
+      "leaderboard_score": 0.472736,
+      "status": "SUPERSEDED",
+      "notes": "Initial naive blocking and matcher baseline."
+    },
+    {
+      "submission_id": "V2",
+      "timestamp": "2026-09-26T00:37:00Z",
+      "model": "artifacts/xgb_matcher_exp002b.json",
+      "features": 22,
+      "candidate_cap": 100,
+      "local_f0_5": 0.819335,
+      "local_precision": 0.890241,
+      "local_recall": 0.698002,
+      "candidate_recall": 0.8658,
+      "production_candidates": 27774044,
+      "production_links": 4812304,
+      "leaderboard_score": 0.781881,
+      "status": "SUPERSEDED",
+      "notes": "EXP-002B + EXP-003B decision layer (France=0.45, US=0.65, India=0.55)."
+    },
+    {
+      "submission_id": "V3",
+      "timestamp": "2026-09-26T20:35:00Z",
+      "model": "artifacts/xgb_matcher_exp004b.json",
+      "features": 26,
+      "candidate_cap": 100,
+      "local_f0_5": 0.831259,
+      "local_precision": 0.895836,
+      "local_recall": 0.720384,
+      "candidate_recall": 0.8658,
+      "production_candidates": 27774044,
+      "production_links": 5057818,
+      "leaderboard_score": 0.785,
+      "status": "PRODUCTION_SAFE_ROLLBACK",
+      "notes": "Zero-drift retrieval metadata features (EXP-004B) + EXP-003B decision layer."
+    },
+    {
+      "submission_id": "FINAL_V3_RECHECK",
+      "timestamp": "2026-09-26T23:27:00Z",
+      "model": "artifacts/xgb_matcher_exp004b.json",
+      "features": 26,
+      "candidate_cap": 100,
+      "local_f0_5": 0.831259,
+      "local_precision": 0.895836,
+      "local_recall": 0.720384,
+      "candidate_recall": 0.8658,
+      "production_candidates": 27774044,
+      "production_links": 5057818,
+      "leaderboard_score": 0.785,
+      "status": "CONFIRMED_V3_BYTE_IDENTICAL",
+      "notes": "Diagnostic confirmed this submission was byte-identical to V3 (EXP-005 was not yet submitted)."
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "experiment_id": "EXP-009-RICH-MATCHER",
+  "description": "Rich 52-Feature Entity Resolution Matcher with Hard-Positive Weighting",
+  "timestamp": "2026-09-27T08:06:58Z",
+  "validation_entities": 2001,
+  "total_candidate_pairs": 192157,
+  "avg_candidates_per_s1": 96.0304847576212,
+  "total_runtime_seconds": 164.8139865398407,
+  "decision": "KEEP",
+  "selected_margin_delta": 0.3,
+  "metrics": {
+    "baseline_exp006b": {
+      "macro_f0_5": 0.845653,
+      "precision": 0.907073,
+      "recall": 0.738549,
+      "tp": 5085,
+      "fp": 298
+    },
+    "new_model_final": {
+      "total_entities": 2001,
+      "macro_f0_5": 0.872996,
+      "macro_precision": 0.927627,
+      "macro_recall": 0.774103,
+      "singleton_count": 112,
+      "singleton_f0_5": 0.794643,
+      "non_singleton_count": 1889,
+      "non_singleton_f0_5": 0.877642,
+      "total_tp": 5339,
+      "total_fp": 209,
+      "total_fn": 1606,
+      "missing_predictions": 0,
+      "cardinality_breakdown": {
+        "0_singleton": {
+          "count": 112.0,
+          "macro_f0_5": 0.794643,
+          "precision": 0.794643,
+          "recall": 0.794643
+        },
+        "1_match": {
+          "count": 104.0,
+          "macro_f0_5": 0.751068,
+          "precision": 0.745192,
+          "recall": 0.798077
+        },
+        "2_match": {
+          "count": 343.0,
+          "macro_f0_5": 0.85041,
+          "precision": 0.893586,
+          "recall": 0.776968
+        },
+        "3+_match": {
+          "count": 1442.0,
+          "macro_f0_5": 0.893248,
+          "precision": 0.959211,
+          "recall": 0.770097
+        }
+      }
+    },
+    "new_model_canonical_m30": {
+      "total_entities": 2001,
+      "macro_f0_5": 0.872996,
+      "macro_precision": 0.927627,
+      "macro_recall": 0.774103,
+      "singleton_count": 112,
+      "singleton_f0_5": 0.794643,
+      "non_singleton_count": 1889,
+      "non_singleton_f0_5": 0.877642,
+      "total_tp": 5339,
+      "total_fp": 209,
+      "total_fn": 1606,
+      "missing_predictions": 0,
+      "cardinality_breakdown": {
+        "0_singleton": {
+          "count": 112.0,
+          "macro_f0_5": 0.794643,
+          "precision": 0.794643,
+          "recall": 0.794643
+        },
+        "1_match": {
+          "count": 104.0,
+          "macro_f0_5": 0.751068,
+          "precision": 0.745192,
+          "recall": 0.798077
+        },
+        "2_match": {
+          "count": 343.0,
+          "macro_f0_5": 0.85041,
+          "precision": 0.893586,
+          "recall": 0.776968
+        },
+        "3+_match": {
+          "count": 1442.0,
+          "macro_f0_5": 0.893248,
+          "precision": 0.959211,
+          "recall": 0.770097
+        }
+      }
+    },
+    "deltas_vs_exp006b": {
+      "macro_f0_5": 0.027343268629115736,
+      "precision": 0.020554257799671682,
+      "recall": 0.035554027851153136,
+      "tp_delta": 254,
+      "fp_delta": -89
+    },
+    "country_metrics": {
+      "India": {
+        "total_entities": 802,
+        "macro_f0_5": 0.831652,
+        "macro_precision": 0.897086,
+        "macro_recall": 0.718487,
+        "singleton_count": 39,
+        "singleton_f0_5": 0.692308,
+        "non_singleton_count": 763,
+        "non_singleton_f0_5": 0.838774,
+        "total_tp": 1997,
+        "total_fp": 117,
+        "total_fn": 792,
+        "missing_predictions": 0,
+        "cardinality_breakdown": {
+          "0_singleton": {
+            "count": 39.0,
+            "macro_f0_5": 0.692308,
+            "precision": 0.692308,
+            "recall": 0.692308
+          },
+          "1_match": {
+            "count": 32.0,
+            "macro_f0_5": 0.743056,
+            "precision": 0.734375,
+            "recall": 0.8125
+          },
+          "2_match": {
+            "count": 156.0,
+            "macro_f0_5": 0.782306,
+            "precision": 0.826923,
+            "recall": 0.708333
+          },
+          "3+_match": {
+            "count": 575.0,
+            "macro_f0_5": 0.859421,
+            "precision": 0.939066,
+            "recall": 0.717785
+          }
+        }
+      },
+      "US": {
+        "total_entities": 1199,
+        "macro_f0_5": 0.900651,
+        "macro_precision": 0.948056,
+        "macro_recall": 0.811304,
+        "singleton_count": 73,
+        "singleton_f0_5": 0.849315,
+        "non_singleton_count": 1126,
+        "non_singleton_f0_5": 0.903979,
+        "total_tp": 3342,
+        "total_fp": 92,
+        "total_fn": 814,
+        "missing_predictions": 0,
+        "cardinality_breakdown": {
+          "0_singleton": {
+            "count": 73.0,
+            "macro_f0_5": 0.849315,
+            "precision": 0.849315,
+            "recall": 0.849315
+          },
+          "1_match": {
+            "count": 72.0,
+            "macro_f0_5": 0.75463,
+            "precision": 0.75,
+            "recall": 0.791667
+          },
+          "2_match": {
+            "count": 187.0,
+            "macro_f0_5": 0.907223,
+            "precision": 0.949198,
+            "recall": 0.834225
+          },
+          "3+_match": {
+            "count": 867.0,
+            "macro_f0_5": 0.915682,
+            "precision": 0.972571,
+            "recall": 0.804791
+          }
+        }
+      }
+    }
+  },
+  "top_features_by_gain": [
+    [
+      "cheap_candidate_score",
+      330.5363464355469
+    ],
+    [
+      "addr_token_set_ratio",
+      68.16139221191406
+    ],
+    [
+      "name_numeric_agreement",
+      67.85022735595703
+    ],
+    [
+      "reciprocal_retrieval_rank",
+      45.18580627441406
+    ],
+    [
+      "name_fuzz_ratio",
+      33.74174880981445
+    ],
+    [
+      "numeric_token_overlap",
+      21.350418090820312
+    ],
+    [
+      "target_addr_empty",
+      17.526010513305664
+    ],
+    [
+      "retrieval_priority_tier",
+      16.067014694213867
+    ],
+    [
+      "strong_addr_numeric",
+      15.72242546081543
+    ],
+    [
+      "name_common_token_ratio",
+      13.298772811889648
+    ],
+    [
+      "compound_number_agreement",
+      12.25012493133545
+    ],
+    [
+      "cross_field_name_loc",
+      11.692343711853027
+    ],
+    [
+      "name_translit_sim",
+      11.618855476379395
+    ],
+    [
+      "name_token_sort_ratio",
+      11.52394962310791
+    ],
+    [
+      "name_len_diff",
+      10.938268661499023
+    ],
+    [
+      "name_fuzz_wratio",
+      10.899818420410156
+    ],
+    [
+      "name_token_jaccard",
+      10.767806053161621
+    ],
+    [
+      "house_number_agreement",
+      9.424583435058594
+    ],
+    [
+      "addr_token_similarity",
+      9.154643058776855
+    ],
+    [
+      "name_jaro_winkler",
+      9.056441307067871
+    ]
+  ],
+  "model_artifact": "C:\\Users\\Nagamani\\OneDrive\\Desktop\\New folder (2)\\artifacts\\xgb_matcher_exp009.json"
+}

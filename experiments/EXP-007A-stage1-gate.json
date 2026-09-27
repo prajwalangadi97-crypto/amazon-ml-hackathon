@@ -1,0 +1,21 @@
+{
+  "experiment": "EXP-007A_Stage1_Gate",
+  "target_gate_passed": false,
+  "runtime_seconds": 20.88120675086975,
+  "recovery": {
+    "total_unretrieved": 432,
+    "total_recovered": 2,
+    "recovery_rate": 0.004629629629629629,
+    "india_recovered": 2,
+    "india_total": 333,
+    "us_recovered": 0,
+    "us_total": 99,
+    "france_recovered": 0,
+    "france_total": 0,
+    "cross_script_recovered": 2,
+    "cross_script_total": 153
+  },
+  "channel_hits": {
+    "tk": 3
+  }
+}

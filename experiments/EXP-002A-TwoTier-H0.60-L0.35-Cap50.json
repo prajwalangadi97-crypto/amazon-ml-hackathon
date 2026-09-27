@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-002A-TwoTier-H0.60-L0.35-Cap50",
+  "hypothesis": "Evaluate candidate compression policy Tier1 >= 0.60 + Tier2 >= 0.35, Cap 50 using cheap pairwise score.",
+  "data_split_description": "Validation benchmark split (2,001 val S1) against full search pool (10,320,219 records).",
+  "blocking_method": "D + E-A + E-C with RapidFuzz Candidate Compression",
+  "features": [
+    "cheap_pairwise_rapidfuzz_score"
+  ],
+  "model": "RapidFuzz Deterministic Adaptive Compression",
+  "hyperparameters": {
+    "policy_id": "TwoTier-H0.60-L0.35-Cap50",
+    "method": "two_tier"
+  },
+  "validation_method": "Candidate Pair Recall & Compression Ratio",
+  "macro_F0_5": 0.8620326741391209,
+  "precision": 0.0656524644086961,
+  "recall": 0.8593232541396688,
+  "training_time_seconds": 0.0,
+  "inference_time_seconds": 395.53054213523865,
+  "notes": "Total cands: 97,285, Avg: 48.6, Med: 50, P95: 50, Max: 50, Removed: 99.53%",
+  "conclusion": "Pair recall: 85.93%, S2: 85.91%, S3: 85.95%, Recall Lost: 6.03%, Compression: 99.53%.",
+  "next_experiment": "EXP-002B",
+  "timestamp": "2026-09-25T17:44:52.430418+00:00",
+  "extra_metrics": {
+    "policy_id": "TwoTier-H0.60-L0.35-Cap50",
+    "policy_name": "Tier1 >= 0.60 + Tier2 >= 0.35, Cap 50",
+    "method": "two_tier",
+    "pair_recall": 0.8593232541396688,
+    "macro_candidate_recall": 0.8620326741391209,
+    "s2_recall": 0.8591127098321343,
+    "s3_recall": 0.8595178719866999,
+    "total_candidates": 97285,
+    "avg_candidates_per_s1": 48.618190904547724,
+    "median_candidates_per_s1": 50,
+    "p95_candidates_per_s1": 50,
+    "max_candidates_per_s1": 50,
+    "zero_candidate_entities": 0,
+    "perfect_recall_entities": 1421,
+    "missed_entities": 580,
+    "broad_candidate_count": 20738149,
+    "compressed_candidate_count": 97285,
+    "compression_ratio": 0.9953088870178337,
+    "pct_candidates_removed": 99.53088870178337,
+    "recall_lost_relative_to_broad": 6.033117350611949,
+    "runtime_seconds": 0.19485998153686523
+  }
+}

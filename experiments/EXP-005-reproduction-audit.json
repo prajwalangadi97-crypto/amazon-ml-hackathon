@@ -1,0 +1,100 @@
+{
+  "audit_id": "EXP-005-reproduction-audit",
+  "timestamp": "2026-09-26T17:38:57Z",
+  "validation_entities": 2001,
+  "total_runtime_seconds": 37.520155906677246,
+  "peak_ram_mb": 0.0,
+  "discrepancy_analysis": {
+    "entity": "S1-371874635",
+    "target": "S3-684456756",
+    "tp_delta": -1,
+    "f0_5_delta": -4.54678328215552e-05,
+    "root_cause": "Worker-level generic token anti-crowding difference (max_generic_per_s1=10 in 004b vs worker cap=300 without generic cap in 005 raw stream)",
+    "impact": "Immaterial (0.000045 F0.5 difference, exactly 1 TP)"
+  },
+  "metrics": {
+    "canonical_v3": {
+      "macro_f0_5": 0.831259,
+      "precision": 0.895836,
+      "recall": 0.720384,
+      "tp": 4957,
+      "fp": 263,
+      "predicted": 5220,
+      "singleton_accuracy": 0.767857,
+      "candidates": 190331,
+      "candidate_recall": 0.8658,
+      "candidate_cap_losses": 500
+    },
+    "reproduced_v3": {
+      "macro_f0_5": 0.8312135321671784,
+      "precision": 0.8958360105661463,
+      "recall": 0.7202176689433057,
+      "tp": 4956,
+      "fp": 263,
+      "predicted": 5219,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357,
+      "candidate_recall": 0.865658747300216,
+      "candidate_cap_losses": 501
+    },
+    "exp005_phase1": {
+      "macro_f0_5": 0.8430595865435322,
+      "precision": 0.9047244235025349,
+      "recall": 0.7356583612955421,
+      "tp": 5063,
+      "fp": 290,
+      "predicted": 5353,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 190357,
+      "candidate_recall": 0.8830813534917207,
+      "candidate_cap_losses": 380
+    },
+    "exp005_phase2": {
+      "macro_f0_5": 0.8440828844184043,
+      "precision": 0.9062236738773476,
+      "recall": 0.7361581114204796,
+      "tp": 5066,
+      "fp": 296,
+      "predicted": 5362,
+      "singleton_accuracy": 0.7678571428571429,
+      "candidates": 191922,
+      "candidate_recall": 0.8842332613390929,
+      "candidate_cap_losses": 372
+    }
+  },
+  "deltas_vs_canonical_v3": {
+    "macro_f0_5": 0.012823884418404319,
+    "precision": 0.010387673877347625,
+    "recall": 0.015774111420479575,
+    "tp_delta": 109,
+    "fp_delta": 33
+  },
+  "deltas_vs_reproduced_v3": {
+    "macro_f0_5": 0.012869352251225874,
+    "precision": 0.010387663311201334,
+    "recall": 0.015940442477173855,
+    "tp_delta": 110,
+    "fp_delta": 33
+  },
+  "mechanism": {
+    "raw_pool_hits": 6513,
+    "v3_cap_losses": 501,
+    "p2_cap_losses": 372,
+    "recovered_candidates": 129,
+    "recovered_tp": 110,
+    "india_recovered_tp": 65,
+    "tp_to_fp_ratio": 3.3333333333333335,
+    "matcher_conversion_rate": 0.8527131782945736
+  },
+  "integrity_checks": {
+    "v3_production_matching_bytes_match": true,
+    "v3_production_candidate_bytes_match": true,
+    "model_artifact_bytes_match": true,
+    "zero_duplicate_candidate_ids": true,
+    "predictions_inside_candidates": true,
+    "exact_2001_s1_evaluated": true,
+    "zero_external_data": true,
+    "pytest_40_passed": true
+  },
+  "verdict": "KEEP"
+}

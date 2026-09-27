@@ -1,0 +1,21 @@
+{
+  "experiment": "EXP-002B: Improved Candidate Compression",
+  "validation_entities": 2001,
+  "total_true_matches": 6945,
+  "max_key_fanout": 15,
+  "max_generic_per_s1": 150,
+  "generic_fanout_threshold": 5,
+  "pair_recall": 0.9402447804175667,
+  "s2_recall": 0.940947242206235,
+  "s3_recall": 0.9395954558049321,
+  "retrieved_true_matches": 6530,
+  "total_candidates": 5734310,
+  "avg_candidates_per_s1": 2865.7221389305346,
+  "num_hitting_2400_cap": 1128,
+  "pct_hitting_2400_cap": 56.37181409295352,
+  "prev_hitting_2400_cap": 1075,
+  "recovered_previously_missed_links": 127,
+  "delta_recall_vs_92_20_pipeline": 1.8286537077033982,
+  "runtime_seconds": 356.4640190601349,
+  "peak_ram_mb": 913.0213623046875
+}

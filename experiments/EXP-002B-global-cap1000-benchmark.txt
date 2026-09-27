@@ -1,0 +1,24 @@
+====================================================================================================
+EXP-002B: ANTI-CROWDING PRIORITY PROTECTION + GLOBAL CAP OF 1,000 REPORT
+====================================================================================================
+Validation Entities     : 2,001 Source 1 entities
+Search Pool Size        : 10,320,219 records (Source 2 + Source 3)
+Total Ground Truth      : 6,945 true links
+Global Cap Policy       : Max 1,000 candidates per S1 entity
+Priority Protected Keys : 1. exact-name matches (en_...)
+                          2. PIN matches (pin_...)
+                          3. address-derived matches (ak_..., nword_..., loc_..., nloc_...)
+
+BENCHMARK METRICS:
+  Pair Recall                     : 93.00% (6,459 / 6,945)
+    Source 2 Recall               : 93.11% (3,106 / 3,336)
+    Source 3 Recall               : 92.91% (3,353 / 3,609)
+  Total Candidates                : 1,598,014 (vs 3,345,467 in 92.20% pipeline)
+  Avg Candidates / S1             : 798.61 (vs 1671.90 in 92.20% pipeline)
+  Entities Hitting Cap (1,000)    : 1,445 (72.21%)
+  Previously Missed Links Recovered: 93 links
+  Recall Delta vs 92.20% Pipeline : +0.81%
+  Recall Delta vs 91.97% Baseline : +1.04%
+  Runtime                         : 395.25s
+  Peak RAM                        : 827.87 MB
+====================================================================================================

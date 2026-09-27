@@ -1,0 +1,163 @@
+{
+  "manifest_version": "1.0",
+  "updated_at": "2026-09-26T18:40:54Z",
+  "total_target_records": 9969589,
+  "expected_total_targets": 9969589,
+  "status": "ALL_INDEXES_VERIFIED",
+  "indexes": {
+    "France": {
+      "country": "France",
+      "source_files": [
+        "dataset/test/test_source2.tsv",
+        "dataset/test/test_source3.tsv"
+      ],
+      "index_path": "artifacts\\target_index_france.pkl",
+      "scratch_index_path": "scratch\\target_index_france.pkl",
+      "record_count": 1434993,
+      "byte_size": 247843851,
+      "sha256": "e360928ad08f58939dbfef98382dc26a3f865f5f21cf8b1283b35f142cc2c88a",
+      "creation_timestamp": "2026-09-26T06:39:18Z",
+      "retrieval_version": "EXP-006B",
+      "compound_numbers_enabled": false,
+      "validation_status": "VERIFIED",
+      "audit_metrics": {
+        "country": "France",
+        "status": "VERIFIED",
+        "index_path": "scratch\\target_index_france.pkl",
+        "file_size_bytes": 247843851,
+        "sha256": "e360928ad08f58939dbfef98382dc26a3f865f5f21cf8b1283b35f142cc2c88a",
+        "load_time_sec": 6.93423867225647,
+        "indexed_records": 1434993,
+        "unique_keys": 3538477,
+        "total_postings": 14788177,
+        "channel_counts": {
+          "exact_name": 1018662,
+          "name_token": 648435,
+          "numeric_street": 820046,
+          "locality": 333218,
+          "other_address": 707319,
+          "pin_composite": 10797
+        },
+        "compound_number_keys": 0,
+        "lookup_benchmark": {
+          "queries_benchmarked": 1000,
+          "runtime_sec": 0.6263988018035889,
+          "throughput_queries_per_sec": 1596.4270639099275,
+          "latency_ms_per_query": 0.6263988018035889,
+          "avg_raw_candidates": 10732.322,
+          "zero_hits_count": 0
+        }
+      }
+    },
+    "US": {
+      "country": "US",
+      "source_files": [
+        "dataset/test/test_source2.tsv",
+        "dataset/test/test_source3.tsv"
+      ],
+      "index_path": "artifacts\\target_index_us.pkl",
+      "record_count": 3817031,
+      "byte_size": 960306237,
+      "sha256": "5978ff8934dcd3caaf513fc779165948d510e5ca117910794e4c42eef1a5f9ee",
+      "creation_timestamp": "2026-09-26T18:32:53Z",
+      "retrieval_version": "EXP-006B",
+      "compound_numbers_enabled": true,
+      "validation_status": "VERIFIED",
+      "audit_metrics": {
+        "country": "US",
+        "status": "VERIFIED",
+        "index_path": "artifacts\\target_index_us.pkl",
+        "file_size_bytes": 960306237,
+        "sha256": "5978ff8934dcd3caaf513fc779165948d510e5ca117910794e4c42eef1a5f9ee",
+        "load_time_sec": 32.061574935913086,
+        "indexed_records": 3817031,
+        "unique_keys": 15467921,
+        "total_postings": 41810396,
+        "channel_counts": {
+          "exact_name": 3045914,
+          "numeric_street": 4921325,
+          "locality": 2004112,
+          "other_address": 2260872,
+          "name_token": 2472643,
+          "pin_composite": 763018,
+          "compound_number": 37
+        },
+        "compound_number_keys": 37,
+        "lookup_benchmark": {
+          "queries_benchmarked": 1000,
+          "runtime_sec": 0.4286041259765625,
+          "throughput_queries_per_sec": 2333.155327708356,
+          "latency_ms_per_query": 0.4286041259765625,
+          "avg_raw_candidates": 6283.791,
+          "zero_hits_count": 0
+        },
+        "build_metrics": {
+          "country": "US",
+          "records_indexed": 3817031,
+          "unique_keys": 15467921,
+          "total_postings": 41810396,
+          "build_time_sec": 251.20910668373108,
+          "save_time_sec": 54.76060962677002,
+          "total_time_sec": 305.9697163105011,
+          "peak_ram_mb": 0.0,
+          "file_size_bytes": 960306237
+        }
+      }
+    },
+    "India": {
+      "country": "India",
+      "source_files": [
+        "dataset/test/test_source2.tsv",
+        "dataset/test/test_source3.tsv"
+      ],
+      "index_path": "artifacts\\target_index_india.pkl",
+      "record_count": 4717565,
+      "byte_size": 1005476813,
+      "sha256": "1e4494c7212750dd4cc324dbfee576343ff23dde96c6eeb7a36afa4abf6b4b86",
+      "creation_timestamp": "2026-09-26T18:40:54Z",
+      "retrieval_version": "EXP-006B",
+      "compound_numbers_enabled": true,
+      "validation_status": "VERIFIED",
+      "audit_metrics": {
+        "country": "India",
+        "status": "VERIFIED",
+        "index_path": "artifacts\\target_index_india.pkl",
+        "file_size_bytes": 1005476813,
+        "sha256": "1e4494c7212750dd4cc324dbfee576343ff23dde96c6eeb7a36afa4abf6b4b86",
+        "load_time_sec": 30.78945231437683,
+        "indexed_records": 4717565,
+        "unique_keys": 14341503,
+        "total_postings": 51771642,
+        "channel_counts": {
+          "exact_name": 3594301,
+          "locality": 1860837,
+          "other_address": 2763336,
+          "name_token": 2233406,
+          "numeric_street": 3710914,
+          "pin_composite": 83755,
+          "compound_number": 94954
+        },
+        "compound_number_keys": 94954,
+        "lookup_benchmark": {
+          "queries_benchmarked": 1000,
+          "runtime_sec": 1.105689525604248,
+          "throughput_queries_per_sec": 904.4130172559156,
+          "latency_ms_per_query": 1.105689525604248,
+          "avg_raw_candidates": 14221.82,
+          "zero_hits_count": 0
+        },
+        "build_metrics": {
+          "country": "India",
+          "records_indexed": 4717565,
+          "unique_keys": 14341503,
+          "total_postings": 51771642,
+          "build_time_sec": 382.14902091026306,
+          "save_time_sec": 54.62708616256714,
+          "total_time_sec": 436.7761070728302,
+          "peak_ram_mb": 0.0,
+          "file_size_bytes": 1005476813
+        }
+      }
+    }
+  }
+}

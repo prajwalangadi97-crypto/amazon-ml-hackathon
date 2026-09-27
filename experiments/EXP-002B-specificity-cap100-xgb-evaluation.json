@@ -1,0 +1,22 @@
+{
+  "macro_f0_5": 0.8158503418750687,
+  "precision": 0.8802551105399685,
+  "recall": 0.7074839564344814,
+  "predicted_links": 5151,
+  "true_positives": 4882,
+  "false_positives": 269,
+  "false_negatives": 2063,
+  "candidate_pair_recall": 0.8658027357811375,
+  "total_candidate_pairs": 190331,
+  "avg_candidates_per_s1": 95.11794102948525,
+  "xgboost_scoring_runtime_seconds": 10.626502513885498,
+  "xgboost_inference_runtime_seconds": 0.1430962085723877,
+  "peak_ram_mb": 781.8046875,
+  "threshold": 0.6,
+  "comparison_baseline": {
+    "macro_f0_5": 0.8364,
+    "precision": 0.8943,
+    "recall": 0.7361,
+    "threshold": 0.6
+  }
+}

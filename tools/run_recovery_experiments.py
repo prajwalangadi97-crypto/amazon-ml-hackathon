@@ -42,6 +42,7 @@ from src.blocking.normalizers import (
     normalize_name_conservative,
     tokenize_name,
 )
+from src.blocking.transliteration import has_indic_script, transliterate_indic_to_latin
 from src.data.ground_truth import parse_ground_truth
 from src.experiments.logger import ExperimentLogger, ExperimentRecord
 
@@ -182,6 +183,17 @@ def extract_h3_name_locality_keys(name: str, address: str) -> List[str]:
         name_prefix = n_tokens[0][:5]
         for loc in a_words[:2]:
             keys.append(f"nl_{name_prefix}_{loc}")
+
+    if has_indic_script(name) and a_words:
+        trans = transliterate_indic_to_latin(name)
+        folded = trans.replace("aa", "a").replace("ee", "i").replace("oo", "u")
+        norm_trans = normalize_name_conservative(clean_domain_or_handle(folded))
+        t_tokens = [w for w in norm_trans.split() if len(w) >= 3 and w not in EXTRA_TOKEN_STOPWORDS]
+        if t_tokens:
+            t_pfx = t_tokens[0][:5]
+            for loc in a_words[:2]:
+                keys.append(f"nl_{t_pfx}_{loc}")
+
     return list(dict.fromkeys(keys))
 
 

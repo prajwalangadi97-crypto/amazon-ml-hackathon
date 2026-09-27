@@ -1,0 +1,16 @@
+{
+  "strategy_id": "SPECIFICITY-CAP100",
+  "final_cap": 100,
+  "validation_entities": 2001,
+  "total_true_matches": 6945,
+  "pair_recall": 0.8658027357811375,
+  "s2_recall": 0.8693045563549161,
+  "s3_recall": 0.8625658077029648,
+  "retrieved_true_matches": 6013,
+  "total_candidate_pairs": 190331,
+  "avg_candidates_per_s1": 95.11794102948525,
+  "previously_missed_recovered": 86,
+  "zero_candidates_count": 0,
+  "runtime_seconds": 569.1622247695923,
+  "peak_ram_mb": 0.0
+}

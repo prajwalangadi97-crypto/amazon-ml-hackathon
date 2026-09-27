@@ -1,0 +1,59 @@
+{
+  "experiment_id": "EXP-003B",
+  "description": "Integration and Validation of Winning Candidate-Group-Aware Decision Layer (Country Thresholds + Relative Margin Delta 0.30)",
+  "timestamp": "2026-09-26T13:12:00Z",
+  "validation_entities": 2001,
+  "model_path": "artifacts/xgb_matcher_exp002b.json",
+  "candidate_set": "Specificity-Aware Cap=100 (190,331 candidate pairs)",
+  "decision_layer_config": {
+    "module": "src.matching.decision_layer",
+    "config_class": "DecisionLayerConfig",
+    "country_thresholds": {
+      "France": 0.45,
+      "US": 0.65,
+      "India": 0.55
+    },
+    "margin_delta": 0.30,
+    "default_threshold": 0.60,
+    "decision_formula": "P >= country_threshold AND (max_P_within_S1 - P <= 0.30)",
+    "multi_match_semantics": "strictly_preserved"
+  },
+  "validation_metrics": {
+    "macro_f0_5": 0.8193348496927714,
+    "precision": 0.8902405939887202,
+    "recall": 0.6980015944408748,
+    "total_predicted_links": 5004,
+    "total_true_positives": 4796,
+    "total_false_positives": 208,
+    "total_false_negatives": 2149,
+    "singleton_accuracy": 0.8035714285714286
+  },
+  "comparison_vs_baseline_0_60": {
+    "baseline_metrics": {
+      "macro_f0_5": 0.8158503418750687,
+      "precision": 0.8802551105399685,
+      "recall": 0.7074839564344814,
+      "total_predicted_links": 5151,
+      "total_true_positives": 4882,
+      "total_false_positives": 269,
+      "total_false_negatives": 2063,
+      "singleton_accuracy": 0.7857142857142857
+    },
+    "deltas": {
+      "macro_f0_5_delta": 0.003484507817702709,
+      "precision_delta": 0.009985483448751684,
+      "recall_delta": -0.009482361993606558,
+      "predicted_links_delta": -147,
+      "tp_delta": -86,
+      "fp_delta": -61,
+      "fp_reduction_percent": -22.676579925650556,
+      "singleton_accuracy_delta": 0.017857142857142905
+    }
+  },
+  "reproduction_status": "EXACT_REPRODUCTION_VERIFIED",
+  "production_code_path_target": {
+    "file": "tools/generate_final_submission.py",
+    "target_lines": "382-398",
+    "change_description": "Replace flat `prob >= args.threshold` scoring loop with per-S1 candidate aggregation and `filter_entity_candidates` from `src.matching.decision_layer`."
+  }
+}
